@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid class practice</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .main-container {
+            height: 10%;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .box-one {
+            height: 100%;
+            width: 100%;
+            background-color: green;
+            text-align: center;
+            grid-column: 1 / span 4;
+        }
+
+        .box-two {
+            height: 100%;
+            width: 100%;
+            background-color:wheat;
+            color: black;
+        }
+
+        .box-three {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(184, 162, 162);
+            
+        }
+
+        .box-four {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            grid-column: 1 / span 4;
+            text-align: center;
+            color: white;
+        }
+        .texts{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 40pxpx;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!--first row-->
+        <div class="box-one">
+            <h1>Breaking News</h1>
+        </div>
+        <!--second row-->
+        <div class="texts">
+            <div class="box-two">
+                <h1>
+                    Trying to woo returned astronaut Sunita Williams to become their team fan. Launching a charm offensive of Rishabh Pant so Lucknow stops pining after KL Rahul. The comedian Mr Nags accosting Yash Dayal, asking him if he’s scared to bowl at the doomed Chinnaswamy. Struggling to find the third apt character to form the Thala – Thalapathy trinity with Ruturaj Gaikwad, and settling for a Hindi movie, in a first-ever for Chennai. A garba tutorial to cheer for 4s and 6s. Roping in local comedians as influencers. And a desperate attempt to get Hyderabad to love Travis Head’s moustache, even as the ‘stache gathers a hate-base from a Team India hangover.
+                </h1>
+
+            </div>
+            <div class="box-three">
+                <h1>
+                    <ul>
+                        <h1>Reloads News</h1>
+                        <li>Event 1</li>
+                        <li> Event 2</li>
+                        <li> Event 3</li>
+                    </ul>
+                </h1>
+            </div>
+            <!--four row-->
+        </div>
+
+        <div class="box-four">
+            <h1>@ 2025 New Company.All Rights Reserved</h1>
+        </div>
+    </div>
+</body>
+
+</html>
