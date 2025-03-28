@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking News</title>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+    .main-container{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    
+    }
+    .box-one{
+        height: 70%;
+        width: 100%;
+        grid-column: 1/ span 5;
+        background-color: green;
+        text-align: center;
+    }
+    .box-two{
+        height: 100%;
+        width: 100%;
+        grid-column: 1/span 3;
+        grid-row: 2/ span 2;
+        background-color: lightgrey;
+        border-radius: 30px;
+    }
+    h3:hover{
+        color: brown;
+    }
+    .box-three{
+        height: 100%;
+        width: 100%;
+        grid-column: 4/span 2;
+        grid-row: 2/ span 2;
+        background-color: lightgrey;
+        border-radius: 40px;
+    }
+    .box-four{
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        grid-column: 1/ span 5;
+        color: antiquewhite;
+        text-align: center;
+    }
+
+</style>
+   
+</head>
+<body>
+   <div class="main-container">
+   <div class="box-one">
+    <h1>Breaking News </h1>
+   </div>
+   <div class="box-two">
+    <h3> Eye on AI, tech companies rejig top deck, plan structural overhaul </h3>
+    <p>India’s IT services sector is undergoing leadership and structural changes due to AI’s rising influence and a tough business environment. Several companies appointed new CEOs, revamped roles, and restructured operations to enhance efficiency and remain competitive.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjoVc4py3PmV-OlzCfoegHtHByxa46cA7v4Q&s" height="110px" alt="img">
+    <h3> <u>Infosys looking to hire experienced tech workers across over 40 skill sets </u></h3>
+       <p>Infosys has sent an internal communication about the proposed hiring, allowing the candidates to indicate the choice of their interview location, and the city where they would want to work if selected. Less than three years ago, the software giant had conducted such a recruitment drive virtually in Bengaluru as the city was</p>
+
+   </div>
+   <div class="box-three">
+    <h1> Reloads News</h1>
+    <ul>
+        <li>OpenAI does not expect to be cash-flow positive until 2029, Bloomberg News reports</li>
+        <li>Eclipse Foundation unveils open source AI development tools</li>
+        <li>OpenAI launches tools to build AI agents faster</li>
+        <li>OpenAI models power faster, smarter code development</li>
+        <li>Google unveils free Gemini AI coding tools for developers  </li>
+        <li>AI and its impact on software development jobs</li>
+    </ul>
+   </div>
+   <div class="box-four">
+    <h3> @ 2025 News Company. All Rights Reserved All {IT} Industry </h3>
+   </div>
+</div>
+</body>
+</html>
