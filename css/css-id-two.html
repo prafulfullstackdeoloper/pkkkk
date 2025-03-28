@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id selecter</title>
+    <style>
+        body{
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+           
+            width: 100%;
+        }
+        #header{
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+        
+        }
+        #logo{
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+        
+            
+            
+        }
+        #logo-title{
+            height: 100px;
+            width: 100%;
+            background-color: white;
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           color: blue;
+           
+           
+        }
+        #home{
+            height: 300px;
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #home-link{
+            height: 300px;
+            width: 100%;
+            background-color: white;
+           grid-template-columns: 1fr ;
+           display: grid;
+           font-size: 50px;
+           color: crimson;
+           margin-left: 20px;
+        
+        }
+        #home-link-one{
+            height: 300px;
+            width: 100%;
+            background-color: white;
+            border-radius: 30px;
+    
+        }
+        #home-inf-two{
+            height: 150px;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            top: 10px;
+            margin-right: 10px;
+        }
+
+        #about{
+            height: 300px;
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            gap: 20px;
+            background-color: black;
+
+        
+        }
+        h1:hover{
+            color: hotpink;
+           
+        }
+        h3:hover{
+            color: springgreen;
+        }
+        b:hover{
+            color: yellowgreen;
+        }
+        #about-one{
+            height: 250px;
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+             border-radius: 30px;
+        }
+        #about-two{
+            height: 250px;
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 30px;
+        }
+        #contact{
+            height: 300px;
+            width: 100%;
+            background-color: lawngreen;
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           gap: 20px;
+           padding: 0;
+           margin: 0;
+           
+          
+         
+        }
+        #contact-two{
+           height: 200px;
+            background-color: white;
+            border-radius: 10px;
+        
+       
+        }
+        #contact-three{
+           height: 200px;
+            background-color: lime;
+            border-radius: 10px;
+        
+       
+        }
+        #contact-four{
+           height: 200px;
+            background-color: lightblue;
+            border-radius: 10px;
+        
+       
+        }
+        #contact-five{
+           height: 200px;
+            background-color: hotpink;
+            border-radius: 10px;
+        
+       
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo" ><img style="margin-left: 20px;" src="http://enjoyprograming.com/assets/logo/resized-logo.jpeg" height="90px" width="100px"   alt=""> </div>
+            <div id="logo-title">
+              <span>home</span>
+              <span>about</span>
+              <span>contact</span>
+              <span>projects</span>
+            </div>
+        </div>
+        <div id="home">
+          <div id="home-link">
+           <b> Summer Camp Admission Open. Hurry Up </b>
+            <div style=" color: green; font-size: 20px;" id="home-inf-two">
+           <span>• Introduction to Programming: Learn the basics of coding using any of beginner-friendly languages like Java, JavaScript, Python, C, C++, Swift.</span>
+           <p>• Problem-Solving Skills: Develop critical thinking and problem-solving abilities through coding challenges.</p>
+           <span></span>
+            </div>
+          </div>
+          <div id="home-link-one"><img src="https://img.freepik.com/premium-photo/it-concept-information-technology-diagram_1173716-51.jpg" height="280px" width="90%" alt=""></div>
+        </div>
+        <center><h1 style="color: darkmagenta;"> *Course Avalible* </h1></center>
+        <div id="about">
+            <div id="about-one">
+                  <h1 >(01) Crash Course</h1>
+                    <h3>  1 Live Project </h3>
+                   <h3> Fee Structure: ₹5000 - ₹12000</h3>
+                    <h3>Duration: 1 Month / 2 Months</h3>
+                    
+            </div>
+            <div  id="about-two">
+               <h1> (02) Full Stack Development </h1>
+               <h3> Live Projects </h3>
+               <h3> Fee Structure: ₹92,000</h3>
+                <h3>Duration: 16 Month </h3>
+            </div>
+        </div>
+        <div id="contact">
+            <div id="contact-two"></div>
+            <div id="contact-three"></div>
+            <div id="contact-four"></div>
+            <div id="contact-five"></div>
+        </div>
+
+    </div>
+</body>
+</html>

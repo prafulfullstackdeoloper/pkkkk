@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selecter atribute</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+       .login-container{
+        height: 90%;
+        width: 40%;
+        display: grid;
+        border-color: black;
+        border-width: 3px;
+        border-style: solid;
+        margin-left: 400px;
+       }
+       .login-heading{
+        width: 100%;
+        height: 30px;
+        display: grid;
+        text-align: center;
+        color: blue;
+        font-size: 30px;
+
+       }
+       p:hover{
+        color: blueviolet;
+       }
+
+       .login-body{
+        width: 100%;
+        height: 60%;
+        font-size: 30px;
+        text-align: center;
+       }
+       .placeholde{
+        font-size: 30px;
+       }
+       .form{
+        width: 90%;
+        height: 90%;
+      margin-right: 200px;
+      font-size: 40px;
+
+       }
+       .login-button{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: brown;
+        
+       }
+       .submit:hover{
+         color: chocolate;
+         color: red;
+        font-size: 30px;
+        background-color: green;
+       }
+    
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-heading">
+           <p> Login Page</p>
+        </div>
+        <div class="login-body">
+          <form > <label class="form" >Username</label>
+            <br>
+            <input class="placeholde" type="text" placeholder="Enter your username">
+            <div class="form"></div>
+            <br>
+            <label class="form">Password</label>
+            <br>
+            <input class="placeholde" type="password" placeholder="Enter password">
+        </div>
+    </form> 
+        <div class="login-button">
+    
+            <input class="submit" type="submit">
+        </div>
+
+    </div>
+    
+</body>
+</html>
