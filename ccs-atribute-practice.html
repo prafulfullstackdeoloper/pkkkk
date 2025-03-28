@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table grid</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+      }
+      .main-container {
+        height: 100%;
+        width: 80%;
+        padding: 0;
+        margin: 0;
+        margin-left: 250px;
+       
+      
+      }
+      .about {
+        height: 10%;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        font-size: 50px;
+        color: rgb(137, 8, 128);
+      }
+      .about:hover{
+        color: gold;
+      }
+      .home {
+        height: 80%;
+        width: 80%;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .home-two {
+        height: 80%;
+        width: 80%;
+        background-color: white;
+        padding: 10px;
+        font-size: 30px;
+        color: greenyellow;
+      }
+      .label:hover{
+        color: orangered;
+      }
+      .placeholder{
+        font-size: 30px;
+      }
+      .home-three {
+        height: 80%;
+        width: 80%;
+        background-color: white;
+        padding: 10px;
+        font-size: 30px;
+        color: greenyellow;
+      }
+      .table {
+        height: 20%;
+        width: 70%;
+        background-color: white;
+        font-size: 30px;
+        padding-left: 20px;
+        
+       
+      }
+     
+      .table-two {
+        height: 15%;
+        width: 80%;
+        text-align: center;
+        font-size: 30px;
+        color: azure;
+        background: linear-gradient(
+            to right,
+            hotpink
+            ,firebrick
+            ,rgb(10, 8, 54)
+           , rgb(137, 8, 128)
+           ,royalblue
+           ,salmon
+           ,aqua
+           
+        );
+          }
+          h1:hover {
+            color: deeppink;
+          }
+    </style>
+  </head>
+  <body>
+    <!--main conatainer-->
+    <div class="main-container">
+      <!--about-->
+      <div class="about">Registration</div>
+      <!--home-->
+      <div class="home">
+        <div class="home-two">
+          <form>
+            <label class="label">Full Name</label>
+            <br />
+            <input class="placeholder" type="text" placeholder="Enter Full name" />
+            <br>
+            <br>
+            <br>
+             <label class="label">Email</label>
+             <br>
+             <input class="placeholder" type="text" placeholder="Enter your Email ">
+             <br>
+             <br>
+             <br>
+             <label class="label">Password</label>
+             <br>
+             <input class="placeholder" type="password" placeholder="Enter your password">
+          </form>
+        </div>
+        <div class="home-three">
+            <form >
+                <label class="label">Username</label>
+                <br>
+                <input class="placeholder" type="text" placeholder="Enter your Username">
+                <br>
+                <br>
+                <br>
+                <label class="label">Phone number</label>
+                <br>
+                <input class="placeholder" type="text" placeholder="Enter your number"> 
+                <br>
+                <br>
+                <br>
+                <label class="label">Confirm  Password</label>
+                <br>
+                <input class="placeholder" type="password" placeholder="Confirm your Password">
+            </form>
+        </div>
+      </div>
+      <!--table-->
+      <div class="table">
+        <label  style= " color: blue; font-size: 40px;">Gender </label>
+        <br>
+         male
+        <input class="male" type="radio" name="male" value="female">
+        female
+        <input type="radio" name="male" value="male">
+        Prefer not to say
+        <input type="radio" name="male" value="other">
+      </div>
+      <!--table-two-->
+      <div  class="table-two">
+       <h1> Register</h1>
+      </div>                    
+    </div>
+  </body>
+</html>
