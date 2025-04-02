@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selecter atribute</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+        .main-container{
+            height: 600px;
+            width: 70%;
+            border-color: blue;
+            border-width: 6px;
+            border-style: solid;
+            margin-left: 250px;
+           
+        }
+        .about{
+            height: 10px;
+            width: 95%;
+            background-color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+        .hr{
+            margin-right: 750px;
+            
+        }
+        hr:hover{
+            background: linear-gradient(
+                hotpink
+                ,forestgreen
+                ,darkorange
+            );
+        }
+        .home{
+            height: 400px;
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            
+        
+
+        }
+        .home-two{
+            height: 350px;
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+        .home-three{
+            height: 350px;
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+        .table{
+            height: 15%;
+            width: 100%;
+            background-color: white;
+            font-size: 30px;
+            
+        }
+        .table-two{
+            height: 35px;
+            width: 100%;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 20px;
+            background: linear-gradient(
+                to right,
+               skyblue
+               ,slateblue
+               ,rgb(69, 49, 87)
+               
+            );
+
+        }
+        .table-two:hover{
+            color: deeppink;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div style="color: darkblue;" class="about">Registration</div>
+   <div class="home">
+     <div class="home-two" >
+        <form>
+            <label class="label">Full Name</label>
+            <br />
+            <input style="font-size: 30px;" class="placeholder" type="text" placeholder="Enter Full name" />
+            <br>
+            <br>
+            <br>
+             <label  class="label">Email</label>
+             <br>
+             <input style="font-size: 30px;" class="placeholder" type="text" placeholder="Enter your Email ">
+             <br>
+             <br>
+             <br>
+             <label class="label">Password</label>
+             <br>
+             <input style="font-size: 30px;" class="placeholder" type="password" placeholder="Enter your password">
+          </form>
+     </div>
+   
+      <div class="home-three">
+        <form >
+            <label class="label">Username</label>
+            <br>
+            <input style="font-size: 30px;" class="placeholder" type="text" placeholder="Enter your Username">
+            <br>
+            <br>
+            <br>
+            <label class="label">Phone number</label>
+            <br>
+            <input style="font-size: 30px;" class="placeholder" type="text" placeholder="Enter your number"> 
+            <br>
+            <br>
+            <br>
+            <label class="label">Confirm  Password</label>
+            <br>
+            <input style="font-size: 30px;" class="placeholder" type="password" placeholder="Confirm your Password">
+        </form>
+      </div>
+    </div>
+    <div class="table">
+            <label  style= " font-size: 40px;">Gender </label>
+            <br>
+             <span style="margin-left: 60px;">male</span>
+            <input class="male" type="radio" name="male" value="female">
+            <span style="margin-left: 60px;"> female</span>
+            <input  type="radio" name="male" value="male">
+            <span style="margin-left: 60px;">Prefer not to say</span>
+            <input type="radio" name="male" value="other">
+          </div>
+          <div class="table-two">
+              Register
+          </div>
+    </div>
+    </div>
+</body>
+</html>
