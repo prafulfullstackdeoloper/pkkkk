@@ -2,355 +2,407 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-  <title>table index two</title>
-  <style>
-    .main-container{
-      height: auto;
-      width: 100vw;
-    }
-    .table {
-      width: 100%;
-      height: 100%;
-      border-collapse: collapse;
-    }
-
-    .first-row {
-      height: 70px;
-
-    }
-
-    .first-row-th {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-
-    }
-
-    .second-row-th {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+       /*main-container-css-start*/
+        .main-container {
+            height: 100%;
+            width: 100%;
 
 
-    }
+        }
+         /*main-container-css-end*/
+          /*header-section-css-start*/
+        .header-section {
+            height: 10%;
+            width: 100%;
+            background-color: #213448;
 
-    .third-row-th {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-
-    }
-
-    .fourth-row-th {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-
-    }
-
-    .second-row {
-      height: 500px;
-    }
-
-    .second-row-th-one {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-      text-align: center;
-      background-image: url(https://static.vecteezy.com/system/resources/previews/013/072/700/non_2x/cloudy-evening-sky-background-with-beautiful-color-gradation-01-free-photo.jpg);
-      animation: product 12s linear infinite;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    @keyframes product {
-      0% {}
-
-      50% {}
-
-      100% {}
+            display: flex;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding-top: 30px;
+            color: white;
 
 
-    }
+        }
+        
 
-    .second-row {
-      height: 500px;
-      box-sizing: 30px;
-      box-shadow: #102E50 30px;
-
-    }
-
-    .second-row-th-one {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: lightseagreen;
-      text-align: center;
-
-    }
-
-    .third-row-th-one {
-      height: 500px;
-    }
-
-    .third-row-th-one {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-      text-align: center;
-      color: white;
-
-    }
-
-    .fourth-row-th-one {
-      height: 500px;
-    }
-
-    .fourth-row-th-one {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-      color: white;
+        .box {
+            height: 50px;
+            width: 100%;
+            background-color: #213448;
+            margin-left: 30px;
+            padding-left: 50px;
+            scroll-behavior: smooth;
+            margin-left: 30px;
+            font-size: 30px;
 
 
-    }
 
-    .fifth-row {
-      height: 500px;
-    }
+        }
+        /*header-section-css-end*/
+         /*artical-section-css-start*/
+        .artical-section {
+            height: 50%;
+            width: 100%;
+            background-color: cadetblue;
+            text-align: center;
+            padding-top: 20%;
+            background-image: url(https://www.shutterstock.com/image-illustration/dark-blue-noise-gradient-2-260nw-2321245043.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
 
-    .fifth-row-th-one {
-      border-style: solid;
-      border-color: black;
-      border-width: 3px;
-      background-color: #102E50;
-      text-align: center;
-      color: white;
 
-    }
+        }
+        /*artical-section-css-end*/
+        /*about-section-css-start*/
+        .about-section {
+            height: 70%;
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 10%;
+            background-image: url(https://www.shutterstock.com/image-illustration/dark-blue-noise-gradient-2-260nw-2321245043.jpg);
+            background-size: cover;
+            color: white;
+        }
+        /*about-section-css-end*/
+       /*projects-section-css-start*/
+        .projects-title {
+            height: 8%;
+            width: 100%;
+            margin-top: 1%;
+            background-image: url(https://www.shutterstock.com/image-illustration/dark-blue-noise-gradient-2-260nw-2321245043.jpg);
+            text-align: center;
+            background-size: cover;
+            color: white;
 
-    .img:hover {
-      box-shadow: 0 4px 8px 0 rgba(189, 11, 11, 0.874), 0 6px 20px 0 rgba(234, 4, 85, 0.779);
-    }
-  </style>
+        }
+
+        .projects {
+            height: auto;
+            width: 100%;
+            background-color: #213448;
+            padding-top: 2%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .Projects-card {
+            height: 200px;
+            width: 100%;
+            background-color: #213448;
+            border-radius: 1%;
+            border-style: solid;
+            text-align: center;
+        }
+        /*projects-section-css-end*/
+         /*contact-section-css-start*/
+        .contact {
+            height: 80%;
+            width: 100%;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/023/130/763/non_2x/abstract-technology-background-illustration-ai-generative-free-photo.jpg);
+            padding-top: 15%;
+            background-size: cover;
+            scroll-behavior: smooth;
+            display: flex;
+            gap: 1%;
+        }
+
+        .contact-title {
+            height: 10%;
+            width: 100%;
+            color: white;
+            background-image: url(https://www.shutterstock.com/image-illustration/dark-blue-noise-gradient-2-260nw-2321245043.jpg);
+            margin-top: 20px;
+            background-size: cover;
+
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .contact-box-one {
+            height: 55%;
+            width: 80%;
+
+            text-align: center;
+            color: white;
+            margin-left: 10px;
+            background-size: cover;
+
+        }
+
+        .contact-box-two {
+            height: 50%;
+            width: 80%;
+
+            text-align: center;
+            padding-top: 20px;
+            font-size: 30px;
+            color: white;
+            margin-right: 10px;
+            background-size: cover;
+
+
+        }
+         /*contact-section-css-end*/
+
+        button:hover {
+            color: blueviolet;
+            background-color: brown;
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="main-container">
-    <table class="table">
-      <!--first row-->
-      <tr class="first-row">
+    <!--main-container start-->
+    <div class="main-container">
+        <div class="header-section">
+        <div class="box"><a style="color: white;" href="#home">Home</div></a>
+        <div class="box"> <a style="color: white;" href="#about">About</div> </a>
+        <div class="box"><a style="color: white;" href="#projects">Projects</div> </a>
+        <div class="box"> <a style="color: white;" href="#contact">Contact</div> </a>
+         <!--artical-section-start-->
+        </div>
+        <b>
+        <div class="artical-section" style="color: chartreuse;" id="home">
+        </b>
+        <h1> My Name Is <span style="color: lightpink;">Praful Kharpuriye</span> </h1>
+        <br>
+        <h2>I Am A <span style="color: sienna;">Full Stack Developer</span> </i></h2>
+           <!--artical-section-start-->
+    </div>
+    
+    <!--about-section-start-->
+    <div class="about-section" id="about">
+        <h1>About</h1>
+        <br>
+        <span style="font-size: 20px;">Hello there! I'm <span style="color: saddlebrown;">praful Kharpuriye</span> ' a
+        passionate <span style="color: crimson;"> Full Stack Developer</span></span>
+        <br>
+        <span style="font-size: 20px;"> with a keen interest in leveraging <span
+        style="color: goldenrod;">technology</span> to create impactful solutions. </span>
+        <br>
+        <span style="font-size: 20px;"> With a solid foundation in both <span style="color: pink;">front-end and
+        back-end</span> development,</span>
+        <br>
+        <span style="font-size: 20px;"> I specialize in <span style="color: sienna;">creating project</span> from
+        various language.</span>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <h4>Sub: <span style="color: lightcoral;">BSC Biotechnology</span></h4>
+        <br>
+        <h4>Clg : <span style="color: lightslategrey;">Nabira</span> Mahavidyalaya <span
+        style="color: palevioletred;">Katol</span> </h4>
+    </div>
+     <!--about-section-end-->
+     <!--project-section-start-->
+    <div class="projects-title" id="projects">
+        <h1><i>My <span style="color: chocolate;">Projects</span></i></h1>
+    </div>
+    <!--project-section-card -start-->
+    <section class="projects">
+        <!--project-one-->
+        <div class="Projects-card">
+        <a href="resume.html">
+        <h3 style="color: yellow;">resume </h3> <img
+        src="https://cdn1.vectorstock.com/i/1000x1000/47/30/resume-logo-vector-31104730.jpg" height="177px"
+        width="300px" alt="">
+        </a>
+        <!--project-two-->
+        </div>
+        <div class="Projects-card">
+        <a href="top-influencer.html">
+        <h3 style="color: yellow;">top influencer</h3> <img
+        src="https://m.media-amazon.com/images/I/41v3tR+gMzL._AC_UF1000,1000_QL80_.jpg" alt=""
+        height="177px" width="300px">
+        </a>
+        </div>
+        <!--project-three-->
+        <div class="Projects-card">
+        <a href="chess-two.html">
+        <h3 style="color: yellow;">chess</h3> <img
+        src="https://4kwallpapers.com/images/walls/thumbs_2t/16659.png" height="177px" width="300px" alt="">
+        </a>
+        </div>
+        <!--project-four-->
+        <div class="Projects-card">
+        <a href="sign-up-form.html">
+        <h3 style="color: yellow;">sign up form</h3><img
+        src="https://i.ytimg.com/vi/MINYBVCEBMI/sddefault.jpg?v=663b669d" height="177px" width="300px"
+        alt="">
+        </a></td>
+        </div>
+          <!--project-five-->
+        <div class="Projects-card">
+        <a href="./css/css/box-model.html">
+        <h3 style="color: yellow;">box modol summary </h3><img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd3l3IFH9FBeT5Z9Fh65Tpd-K9u0u_occSSQ&s"
+        height="177px" width="300px" alt="img">
+        </a>
+        </div>
+        <!--project-six-->
+        <div class="Projects-card">
+        <a href="Student-data.html">
+        <h3 style="color: yellow;">Student-data</h3> <img
+        src="https://img.freepik.com/premium-vector/student-minimal-vector-line-icon-3d-button-isolated-black-background-premium-vector_570929-1139.jpg"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+         <!--project-seven--> 
+        <div class="Projects-card">
+        <a href="./css/css/css-summary.html">
+        <h3 style="color: yellow;">summary css</h3><img
+        src="https://i.ytimg.com/vi/HKpZV5yTi_8/maxresdefault.jpg" height="177px" width="300px" alt="">
+        </a>
+        </div>
+          <!--project-Eighet-->
+        <div class="Projects-card">
+        <a href="report-card.html">
+        <h3 style="color: yellow;">report-card</h3><img
+        src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-beautiful-client-profile-vector-line-icon-png-image_5092946.jpg"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+          <!--project-Nine-->
+        <div class="Projects-card">
+        <a href="table-calculator.html">
+        <h3 style="color: yellow;">Calculator</h3><img
+        src="https://png.pngtree.com/thumb_back/fh260/background/20230630/pngtree-3d-illustration-of-math-symbols-on-black-calculator-icon-image_3701395.jpg"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+        <!--project-ten-->
+        <div class="Projects-card">
+        <a href="tbl-my-page.html">
+        <h3 style="color: yellow;">you-tube page</h3><img
+        src="https://mrwallpaper.com/images/hd/small-youtube-logo-on-black-background-9nt9qgud1t4mg64g.jpg"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+        <!--project-Eleven-->
+        <div class="Projects-card">
+        <a href="cpu-components.html">
+        <h3 style="color: yellow;">cpu-components</h3><img
+        src="https://www.shutterstock.com/shutterstock/videos/3663128359/thumb/1.jpg?ip=x480" height="177px"
+        width="300px" alt="">
+        </a>
+        </div>
+        <!--project-Twelve-->
+        <div class="Projects-card">
+        <a href="layout.html">
+        <h3 style="color: yellow;">layout </h3><img
+        src="https://img.freepik.com/free-vector/realistic-silver-frame-design_23-2149236260.jpg?semt=ais_hybrid&w=740"
+        height="177px" width="300px" alt="img">
+        </a></td>
+        </div>
+         <!--project-thirteen-->
+        <div class="Projects-card">
+        <a href="./././css/css/grid-class-practice-one.html">
+        <h3 style="color: yellow;">news practice grid</h3><img
+        src="https://t4.ftcdn.net/jpg/09/08/12/89/360_F_908128986_DsDRvtra0aDyVKnPhtW30Jc15ABZJwIr.jpg"
+        height="177px" width="300px" alt="img">
+        </a>
+        </div>
+        <!--project-fourteen-->
+        <div class="Projects-card">
+        <a href="product-grid.html">
+        <h3 style="color: yellow;">products grid </h3> <img
+        src="https://static.vecteezy.com/system/resources/previews/005/732/506/non_2x/man-hand-holding-smart-phone-digital-marketing-word-with-icon-business-virtual-screen-free-photo.jpg"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+         <!--project-fifteen--> 
+        <div class="Projects-card">
+        <a href="rainbo-bannar.html">
+        <h3 style="color: yellow;">rainbo-bannar</h3> <img
+        src="https://i.ytimg.com/vi/8jTMC7gI9K8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBqoO4tVveD3sDjPk7KzLnVIEjpQQ"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+         <!--project-sixteen-->
+        <div class="Projects-card">
+        <a href="cake-shop-grid.html">
+        <h3 style="color: yellow;">Mushroom Products Company</h3> <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdxgkdxRHxlN4tZi8LYRgolKC24pOf_njwQ&s"
+        height="177px" width="300px" alt="">
+        </a></td>
+        </div>
+         <!--project-seventeen-->
+        <div class="Projects-card">
+        <a href="./css/css/css-atribute-practice.html">
+        <h3 style="color: yellow;">Css Resume of Grid</h3> <img
+        src="https://cdn1.vectorstock.com/i/1000x1000/47/30/resume-logo-vector-31104730.jpg" height="177px"
+        width="300px" alt="">
+        </a></td>
+        </div>
+         <!--project-Eighteen-->
+        <div class="Projects-card">
+        <a href="input-output.html">
+        <h3 style="color: yellow;">Input/Output</h3> <img
+        src="https://storyblok-assets.output.com/2400x1350/523ee110a0/home-page-meta-image.png"
+        height="177px" width="300px" alt="">
+        </a>
+        </div>
+          <!--project-nineteen-->
+        <div class="Projects-card"></div>
+        <div class="Projects-card"></div>
+        <!--project-section-card -end-->
+    </section>
+    <!--project-section-end-->
+    <!--contact-section-start-->
+    <div class="contact-title">
+        <h1>Con<span style="color: goldenrod;">tact</span> </h1>
+    </div>
+    <div class="contact" id="contact">
+        <div class="contact-box-one">
+        <h1>Contact Me</h1>
+        <br>
 
-        <td class="first-row-th"><a href="#home">
-            <h1>home</h1>
-          </a></td>
-        <td class="second-row-th"> <a href="#about">
-            <h1>about</h1>
-          </a></td>
-        <td class="third-row-th"><a href="#projects">
-            <h1>projects</h1>
-          </a></td>
-        <td class="fourth-row-th"><a href="#contacts">
-            <h1>contact</h1>
-          </a></td>
-      </tr>
+        Email :<a style=" color: wheat;" href="mailto:pkharpuriye80@gmail.com">pkharpuriye80@gmail.com</a>
+        <br>
+        <br>
 
-      <!--second row-->
-      <tr class="second-row">
-        <td colspan="4" class="second-row-th-one" id="home">
-          <h1><b>my name is praful k</b></h1>
-          <h3><i>i am a full stack developer</i></h3>
-          <img class="img" style="border-radius: 60PX;" src="Screenshot (44).png" height="200px" alt="">
-
-
-
-        </td>
-
-      </tr>
-      <!--third row-->
-      <tr class="third-row-th-one ">
-        <td colspan="4" class="third-row-th-one" id="about ">
-          <h1>about</h1>
-          <h3><b>Hello there! I'm praful Kharpuriye ' a passionate Full Stack Web Developer
-              with a keen interest in leveraging technology to create impactful solutions.
-              With a solid foundation in both front-end and back-end development,
-              I specialize in creating project from various language.</b></h3>
-          <h1>Sub: BSC Biotechnology </h1>
-          <h1>clg : Nabira mahavidyalaya katol</h1>
-        </td>
-
-
-      </tr>
-      <!--fourth row-->
-      <tr class="fourth-row-th-one">
-        <td colspan="4" class="fourth-row-th-one" id="projects">
-          <h1><b>my projects</b></h1>
-          <h3><i>my html project</i></h3>
-          <table
-            style="border-style: solid; border-width: 3px; border-width: 100%; height:300px ; border-collapse: collapse; text-align: center; text-align: center;">
-            <caption>
-              <p style="font-size: 30px; color: yellow;"><b> My projects</b></p>
-            </caption>
-            <tr>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="resume.html">
-                  <h3 style="color: yellow;">resume </h3> <img
-                    src="https://marketplace.canva.com/EAFzfwx_Qik/4/0/1131w/canva-blue-simple-professional-cv-resume-T9RPR4DPdiw.jpg"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; "><a href="top-influencer.html">
-                  <h3 style="color: yellow;">top influencer</h3> <img
-                    src="https://vtlogo.com/wp-content/uploads/2020/12/influencer-vector-logo.png" alt=""
-                    height="200px">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="chess-two.html">
-                  <h3 style="color: yellow;">chess</h3> <img
-                    src="https://code-projects.org/wp-content/uploads/2018/03/Screenshot-61-Copy-1.png" height="200px"
-                    alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="sign-up-form.html">
-                  <h3 style="color: yellow;">sign up form</h3><img
-                    src="https://static.vecteezy.com/system/resources/previews/047/043/046/non_2x/online-registration-form-with-button-for-signing-up-vector.jpg"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="./css/css/box-model.html">
-                  <h3 style="color: yellow;">box modol summary </h3><img
-                    src="https://thumbs.dreamstime.com/b/clipboard-summary-icon-black-outline-vector-illustration-flat-design-210774227.jpg"
-                    height="200px" alt="img">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="Student-data.html">
-                  <h3 style="color: yellow;">Student-data</h3> <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUm9gkuh3rL5gbZnzdL5xrNGaDetmnB_6EaneI3Pk9egUYBwRb2TxkJKWn9XO5w_TR5TA&usqp=CAU"
-                    height="200px" alt="">
-                </a></td>
-
-            </tr>
-            <tr>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="./css/css/css-summary.html">
-                  <h3 style="color: yellow;">summary css</h3><img
-                    src="https://media.licdn.com/dms/image/v2/D5612AQGZkW5bDu-fpw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692206115331?e=2147483647&v=beta&t=MpVVLk8aGmxhI-VBak5FxRFVP_-BkhWVDJESjDj-s_Y"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="report-card.html">
-                  <h3 style="color: yellow;">report-card</h3><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ3CWrkvvKh_XqB1rdjD1OwIOjVJLPw4m_AQ&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"> <a href="table-calculator.html">
-                  <h3 style="color: yellow;">Calculator</h3><img
-                    src="https://cdn.create.vista.com/api/media/medium/358143316/stock-photo-calculator-papers-table-office?token="
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="you-tube.html">
-                  <h3 style="color: yellow;">you-tube page</h3><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3QeHehuPZhc4SUHu5Mk658KRw8EWN_Zzvjw&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px;"><a href="cpu-components.html">
-                  <h3 style="color: yellow;">cpu-components</h3><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY-AI63voJZGCLk2r0RSQ2FcV7BicE5HucAQ&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid;border-width: 3px; "><a href="layout.html">
-                  <h3 style="color: yellow;">layout </h3><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhxXR5pfaadmR6TQunk-lEg_NXvoGzkDGZg&s"
-                    height="200px" alt="img">
-                </a></td>
-
-            </tr>
-            <tr>
-              <td style="border-style: solid;border-width: 3px; "><a href="grid-class-practice-one.html">
-                  <h3 style="color: yellow;">news practice grid</h3><img
-                    src="https://graphicsfamily.com/wp-content/uploads/edd/2021/11/News-Logo-Template-Download-scaled.jpg"
-                    height="200px" alt="img">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="product-grid.html">
-                  <h3 style="color: yellow;">products grid </h3> <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_buj-YTdW19uOJOyZCZDTevhSaZhTyAgJrw&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="rainbo-bannar.html">
-                  <h3 style="color: yellow;">rainbo-bannar</h3> <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPwXDhQLcCdcHPUSoReFMp7R54tmeKUXZHxg&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="cake-shop-grid.html">
-                  <h3 style="color: yellow;">Mushroom Products Company</h3> <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdxgkdxRHxlN4tZi8LYRgolKC24pOf_njwQ&s"
-                    height="200px" alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a
-                  href="./css/css/css-atribute-practice.html">
-                  <h3 style="color: yellow;">Css Resume of Grid</h3> <img
-                    src="https://cdn1.vectorstock.com/i/1000x1000/47/30/resume-logo-vector-31104730.jpg" height="200px"
-                    alt="">
-                </a></td>
-
-              <td style="border-style: solid; border-width: 3px; width: 100%;"> <a href="input-output.html">
-                  <h3 style="color: yellow;">Input/Output</h3> <img
-                    src="https://thumbs.dreamstime.com/b/signal-input-output-signal-input-output-logo-design-template-vector-105107180.jpg"
-                    height="200px" alt="">
-                </a></td>
-
-            </tr>
-
-          </table>
-
-        </td>
-
-      </tr>
-      <!--fifth row-->
-      <tr class="fifth-row">
-        <td colspan="4" class="fifth-row-th-one" id="contacts">
-          <h1><b>contact</b></h1>
-          Email:<a href="mailto: pkharpuriye@80gmail.com">pkharpuriye80@gmail.com</a>
-          <br>
-          phone: <a href="tel:+91 8010824509"> 8010824509</a>
-          <br>
-          location: <a
-            href="https://www.google.com/maps/place/Jolwadi,+Maharashtra+441305/@21.3473387,78.4489757,17z/data=!3m1!4b1!4m6!3m5!1s0x3bd44e6da32cbb5f:0x5377bb2a1d05473!8m2!3d21.3471847!4d78.4485509!16s%2Fg%2F1hjh3lh7l?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">jolwadi</a>
-          <br>
-          Skype: <a href="">avalible</a>
-          <br>
-          git hub profile: <a href="https://github.com/prafulfullstackdeoloper">git hub</a>
-        </td>
-
-      </tr>
-
-
-
-
-
-    </table>
-
-  </div>
-
-
-
-
+        <br>
+        Call : <a style="color: wheat;" href="tel:91+ 8010824509">91+8010824509</a>
+        <br> <br>
+        <br>
+        Address : At: Jolwadi Katol Maharashtra India
+        </div>
+        <div class="contact-box-two">
+        <input style="font-size: 20px; height: 30px; width: 300px;" type="text" id="name" name="name" required=""
+        fdprocessedid="d99x7c" placeholder="Enter a name">
+        <br>
+        <br>
+        <input style="font-size: 20px; height: 30px; width: 300px;" type="email" name="email"
+        placeholder="Enter your Email" required="" fdprocessedid="zjthum">
+        <br>
+        <br>
+        <textarea style=" width: 300px;" name="Your Messege" id="" placeholder="Text Your Messege"></textarea>
+        <br>
+        <button style="font-size: 20px; height: 40px; width: 150px;" type="submit"
+         fdprocessedid="89hw0f">Submit</button>
+        </div>
+    </div>
+    </div>
+      <!--contact-section-end-->
+     <!--main-container-end-->
 </body>
-
 </html>
