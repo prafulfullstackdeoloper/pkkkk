@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADHAKRISHNA Medical Store</title>
+      
+    <link
+      rel="shortcut icon"
+      href="WhatsApp Image 2025-03-30 at 19.44.00_d14377b2.jpg"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .main-container {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Header Section */
+      .logo-ditel {
+        background-color: #123458;
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo-one {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-menu a:hover {
+        color: #4fc3f7;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        height: 100vh;
+        background: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
+                    url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        animation: backgroundSlide 15s infinite;
+      }
+
+      @keyframes backgroundSlide {
+        0% {
+          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
+                           url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
+        }
+        50% {
+          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
+                           url('https://visionshopfitters.co.uk/wp-content/uploads/2019/10/Clarks-Pharmacy-Counter-1800x1200.jpg');
+        }
+        100% {
+          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
+                           url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
+        }
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 600px;
+      }
+
+      .cta-button {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+      }
+
+      /* Services Section */
+      .services-section {
+        padding: 80px 20px;
+        background: #f8f9fa;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: #123458;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+
+      .service-card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #123458;
+      }
+
+      .service-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Medicine Promotion Section */
+      .medicine-promo {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #123458 0%, #1e3a8a 100%);
+        color: white;
+      }
+
+      .promo-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .promo-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .discount-text {
+        color: #4fc3f7;
+        font-weight: bold;
+      }
+
+      .promo-description {
+        font-size: 1.1rem;
+        margin: 30px 0;
+        opacity: 0.9;
+      }
+
+      .medicine-select {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background: white;
+        color: #333;
+      }
+
+      .buy-btn {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .buy-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+      }
+
+      .promo-image {
+        text-align: center;
+      }
+
+      .promo-image img {
+        width: 100%;
+        max-width: 500px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      }
+
+      /* Medicine Grid Section */
+      .medicine-grid-section {
+        padding: 80px 20px;
+        background: white;
+      }
+
+      .medicine-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .medicine-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+      }
+
+      .medicine-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+
+      .medicine-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .medicine-card-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .medicine-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #123458;
+        margin-bottom: 15px;
+      }
+
+      .medicine-name {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .medicine-buy-btn {
+        background: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .medicine-buy-btn:hover {
+        background: #218838;
+        transform: translateY(-2px);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 20px;
+        background: #1a1a1a;
+        color: white;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contact-card {
+        text-align: center;
+      }
+
+      .contact-card h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #4fc3f7;
+      }
+
+      .contact-card a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-card a:hover {
+        color: #4fc3f7;
+      }
+
+      .newsletter-input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background: #333;
+        color: white;
+      }
+
+      .newsletter-btn {
+        background: #4fc3f7;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .newsletter-btn:hover {
+        background: #29b6f6;
+        transform: translateY(-2px);
+      }
+
+      /* WhatsApp Float */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: #25d366;
+        border-radius: 50%;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      }
+
+      .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+        display: block;
+      }
+
+      /* Mobile Responsive */
+      @media screen and (max-width: 768px) {
+        .header-content {
+          padding: 0 15px;
+        }
+
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: #123458;
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .nav-menu a {
+          padding: 10px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .logo-one {
+          font-size: 1rem;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .hero-section {
+          background-attachment: scroll;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .service-card {
+          padding: 30px 20px;
+        }
+
+        .promo-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          text-align: center;
+        }
+
+        .promo-text h2 {
+          font-size: 2rem;
+        }
+
+        .medicine-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .whatsapp-float {
+          bottom: 15px;
+          right: 15px;
+          padding: 12px;
+        }
+
+        .whatsapp-float img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 1.5rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .promo-text h2 {
+          font-size: 1.5rem;
+        }
+
+        .medicine-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .services-section,
+        .medicine-promo,
+        .medicine-grid-section,
+        .contact-section {
+          padding: 40px 15px;
+        }
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .slide-in {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slideInLeft 0.8s ease forwards;
+      }
+
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header class="logo-ditel">
+        <div class="header-content">
+          <div class="logo-one">
+            💊 RADHAKRISHNA Medical Store
+          </div>
+          <nav>
+            <ul class="nav-menu" id="navMenu">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#medicine">Medicine</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <h1 class="fade-in">RADHAKRISHNA Medical Store</h1>
+          <p class="fade-in">Your trusted partner in health and wellness. Quality medicines and healthcare products at affordable prices.</p>
+          <a href="#services" class="cta-button fade-in">Explore Services</a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <img src="https://st.depositphotos.com/2885805/4736/v/450/depositphotos_47365953-stock-illustration-delivery-icon-silhouette.jpg" alt="Fast Delivery" />
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable delivery service to your doorstep. We ensure your medicines reach you on time.</p>
+          </div>
+          <div class="service-card fade-in">
+            <img src="https://www.shutterstock.com/image-vector/id-card-icon-flat-style-600nw-1384530530.jpg" alt="Licensed" />
+            <h3>Government Licensed</h3>
+            <p>Fully licensed and certified pharmacy with government approval. Your safety is our priority.</p>
+          </div>
+          <div class="service-card fade-in">
+            <img src="https://media.istockphoto.com/id/1470051537/vector/24-7-service-concept-24-7-open-support-service-icon-round-the-clock-customer-service-arrow.jpg" alt="24/7 Support" />
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock customer support for all your medical needs and emergency requirements.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Medicine Promotion Section -->
+      <section class="medicine-promo">
+        <div class="promo-content">
+          <div class="promo-text">
+            <h2>Get Any Medicine</h2>
+            <h2>on <span class="discount-text">25%</span></h2>
+            <h2><span class="discount-text">Discount</span></h2>
+            <p class="promo-description">
+              Wide range of quality medicines available at discounted prices. 
+              Choose from our extensive collection of certified pharmaceuticals.
+            </p>
+            <select class="medicine-select" id="medicineSelect">
+              <option value="">Select Medicine</option>
+              <option value="Ibuprofen">Ibuprofen</option>
+              <option value="Paracetamol">Paracetamol (Acetaminophen)</option>
+              <option value="Aspirin">Aspirin</option>
+              <option value="Tramadol">Tramadol</option>
+              <option value="Citalopram">Citalopram (Celexa)</option>
+              <option value="Amlodipine">Amlodipine</option>
+              <option value="Alendronate">Alendronate</option>
+              <option value="Azithromycin">Azithromycin</option>
+              <option value="Cetirizine">Cetirizine</option>
+              <option value="Cephalexin">Cephalexin</option>
+              <option value="Omeprazole">Omeprazole</option>
+              <option value="Misoprostol">Misoprostol Tab.</option>
+              <option value="Dinoprostone">Dinoprostone gel</option>
+              <option value="Dydrogestone">Dydrogestone Tab</option>
+              <option value="Metaxalone">Metaxalone</option>
+              <option value="Syrup Expectorant">Syrup Expectorant</option>
+              <option value="Salbutamol">Salbutamol</option>
+              <option value="Budesonide">Budesonide</option>
+              <option value="Thiotropium">Thiotropium</option>
+              <option value="Vitamin D drops">Vitamin D drops</option>
+              <option value="D-Penicillamine">D – Penicillamine</option>
+              <option value="Wysolone">Wysolone</option>
+              <option value="Doxycycline">Doxycycline</option>
+              <option value="Dacarbazine">Dacarbazine</option>
+              <option value="Escitalopram">Escitalopram</option>
+              <option value="Salmeterol">Salmeterol</option>
+              <option value="Monteleukast">Monteleukast</option>
+              <option value="Simethicone">Simethicone</option>
+              <option value="Chromomelix">Chromomelix</option>
+            </select>
+            <button class="buy-btn" onclick="buyMedicine()">Buy Medicine</button>
+          </div>
+          <div class="promo-image">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page279/medion/assets/images/medicines.jpg" alt="Medicine Collection" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Medicine Grid Section -->
+      <section id="medicine" class="medicine-grid-section">
+        <h2 class="section-title">Medicine & Health Products</h2>
+        <div class="medicine-grid">
+          <div class="medicine-card fade-in">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/150922094902-22-prescription-drugs-25-medical-mistakes.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹799.00</div>
+              <div class="medicine-name">Health Supplement</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Health Supplement', 799)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹599.00</div>
+              <div class="medicine-name">Vitamin Tablets</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Vitamin Tablets', 599)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://www.riscassi-davis.com/images/blog/iStock-1190193494.1).jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹450.00</div>
+              <div class="medicine-name">Syrup Medicine</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Syrup Medicine', 450)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://cdn-ildcgjf.nitrocdn.com/VQqUTphAkvWXTRkGoGSZgPuSFAPIIPJO/assets/images/optimized/rev-c09e3fc/sedpharma.com/wp-content/uploads/2022/07/d67a29de57b4ab7e3439ae4f490d4ae7.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹320.00</div>
+              <div class="medicine-name">Pain Relief</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Pain Relief', 320)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://restoringwellnesssolutions.com/wp-content/uploads/2024/05/doctors-who-specialize-in-medication-management.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹110.00</div>
+              <div class="medicine-name">Cephalexin</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Cephalexin', 110)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyHUS6VgT_qDMwVCI76UkNHVOHJvBuSQHxIQ&s" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹110.00</div>
+              <div class="medicine-name">Doxycycline</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Doxycycline', 110)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹110.00</div>
+              <div class="medicine-name">Chromomelix</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Chromomelix', 110)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹110.00</div>
+              <div class="medicine-name">Tramadol</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Tramadol', 110)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Healthy Products Section -->
+      <section class="medicine-grid-section" style="background: #f8f9fa;">
+        <h2 class="section-title">Healthy Products</h2>
+        <div class="medicine-grid">
+          <div class="medicine-card fade-in">
+            <img src="https://media.gettyimages.com/id/494236751/photo/advil-and-ibuprofen.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹799.00</div>
+              <div class="medicine-name">Advil and Ibuprofen</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Advil and Ibuprofen', 799)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://app.accessnewswire.com/imagelibrary/f924553f-9c8f-4ed6-8f6b-a497d8b75372/1035261/mind-lab-pro.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹599.00</div>
+              <div class="medicine-name">Mind Lab Pro</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Mind Lab Pro', 599)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://media.gettyimages.com/id/57083389/photo/new-study-finds-risks-with-plavix-aspirin-combination.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹450.00</div>
+              <div class="medicine-name">Plavix-Aspirin</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Plavix-Aspirin', 450)">Buy Now</button>
+            </div>
+          </div>
+          <div class="medicine-card fade-in">
+            <img src="https://www.addveda.com/admin/pro_images/5f92b67f57995giloy.jpg" alt="Medicine" />
+            <div class="medicine-card-content">
+              <div class="medicine-price">₹320.00</div>
+              <div class="medicine-name">Ayurvedic Medicines</div>
+              <button class="medicine-buy-btn" onclick="buyProduct('Ayurvedic Medicines', 320)">Buy Now</button>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="contact-grid">
