@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Company Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #d2caca;
+            background: linear-gradient(135deg, #000000 0%, #09050e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 50px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: rgba(12, 10, 10, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f4f0f0;
+            position: relative;
+        }
+
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #ececec;
+            margin-bottom: 15px;
+        }
+
+        .full-width-card {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgb(253, 246, 246);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(253, 253, 253, 0.8);
+        }
+
+        .team-section {
+            background: rgba(15, 5, 5, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 50px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #0d1218 0%, #050507 100%);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 300px;
+            height: 500px;
+           border-radius: 20%;
+            margin-bottom: 20px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #fffdfd;
+            font-size: 14px;
+        }
+
+        .team-member h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ededed;
+        }
+
+        .team-member p {
+            color: #fcf9f9;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+            <p>Discover our story, mission, and the people behind our success</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2>Our Story</h2>
+                <p>Founded in 2025, we started as a small team with a big vision. Our journey began when we recognized the need for innovative solutions in our industry.</p>
+                <p>What started as a passion project has grown into a thriving company that serves thousands of customers worldwide.</p>
+                <p>We believe in the power of technology to transform lives and create meaningful connections between people and businesses.</p>
+            </div>
+
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>To empower businesses and individuals through cutting-edge technology solutions that are both innovative and accessible.</p>
+                <p>We strive to create products that not only meet current needs but anticipate future challenges and opportunities.</p>
+                <p>Our commitment to excellence drives us to continuously improve and evolve, ensuring we deliver the best possible experience for our users.</p>
+            </div>
+
+            <div class="card full-width-card">
+                <h2>Our Values</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Customer Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            <p>The talented individuals who make everything possible</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member img" ><img src="../it-project/assets/images/WhatsApp Image 2025-07-07 at 11.14.08_49f112d6.jpg" width="10%" height="200px" alt=""></div>
+                    <h3>Praful kharpuriye</h3>
+                    <p> Web Developers</p>
+                    <p>With over 1 years of experience in technology and Full stack development, Praful leads our vision and strategy.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member img"><img src="../it-project/assets/images/WhatsApp Image 2025-07-07 at 11.25.19_aa011a70.jpg" width="10%" height="200px" alt=""></div>
+                    <h3>Rohit Kharpuriye</h3>
+                    <p>Web Developers</p>
+                    <p>Rohit brings deep technical expertise and innovative thinking to drive our product development forward.</p>
+                </div>
+                
+            
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to Work With Us?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 30px;">
+                Let's discuss how we can help bring your vision to life
+            </p>
+            <a href="it-project.html" class="cta-button">Get In Touch</a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, .team-section, .cta-section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation for statistics
+        const counters = document.querySelectorAll('.stat-number');
+        
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.textContent);
+            const increment = target / 100;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target + (counter.textContent.includes('%') ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current) + (counter.textContent.includes('%') ? '%' : '+');
+                }
+            }, 20);
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        animateCounter(counter);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
