@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid roos span class</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            background-color: gold;
+        }
+        .box-one{
+            width: 100%;
+            height: 100%;
+            background-color: cadetblue;
+            grid-row: 1/ span 3;
+          
+        }
+         .box-two{
+            width: 100%;
+            height: 100%;
+            background-color: hotpink;
+        }
+         .box-three{
+            width: 100%;
+            height: 100%;
+            background-color: firebrick;
+        }
+         .box-four{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(39, 44, 82);
+            grid-row: 2 / span 2;
+          
+        }
+         .box-five{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(95, 160, 121);
+         
+        }
+         .box-six{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(130, 160, 95);
+            grid-row: 3/ span 2;
+           
+        }
+         .box-seven{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(240, 114, 52);
+           
+        }
+         .box-eight{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(86, 208, 61);
+           
+        }
+         .box-nine{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(95, 95, 160);
+            grid-column: 1 / span 3 ;
+            
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box-one"></div>
+        <div class="box-two"></div>
+        <div class="box-three"></div>
+        <div class="box-four"></div>
+        <div class="box-five"></div>
+        <div class="box-six"></div>
+          <div class="box-seven"></div>
+            <div class="box-eight"></div>
+             <div class="box-nine"></div>
+            
+    </div>
+</body>
+</html>

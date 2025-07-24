@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comparison</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+         
+         
+        }
+        header{
+            height: 80%;
+            width: 40%;
+            background-color: aquamarine;
+            margin-left: 400px;
+            border-radius: 10%;
+            border-color: saddlebrown;
+
+           
+        }
+        .box-one{
+            height: 90px;
+             width: 100%;
+             background-color: rgb(185, 127, 255);
+             border-radius: 10%;
+             font-size: 30px;
+             text-align: center;
+            padding-top: 40px;
+        }
+        input{
+           
+             
+             width: 200px;
+             height: 30px;
+            color: black;
+            margin-left: 35%;
+           
+        }
+        label{
+            margin-left: 30%;
+            font-size: 40px;
+        }
+        .one{
+            height: 50px;
+            width: 100%;
+            background-color: black; 
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div  type=" password"  id="password" class="box-one">Values</div>
+       <caption></caption>
+        <br>
+         <label for="">Enter Password </label>
+         <br>
+    <input  type="text" placeholder=" Enter a first name ">
+    <br>
+    <br>
+    <br>
+      <input onclick="validpassword()"  id="password" type="submit" name="Valid Password">
+      <br> 
+      <br>
+      <div class="one" id="result"></div>
+
+
+      <script>
+        function validpassword (){
+            const Password = document.getElementById ("password").value;
+            document.getElementById("result").innerHTML= Password == "123456";
+        }
+      </script>
+</body>
+</html>

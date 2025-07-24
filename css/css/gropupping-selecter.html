@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>groupping selecter </title>
+    <style>
+        /*universal selecter*/
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .main-container{
+            height: 100%;
+            width: 100%;
+
+        }
+        .home{
+            height: 10%;
+            width: 100%;
+            background-color: aqua;
+        }
+        .header{
+            height: 80%;
+            width: 100%;
+            background-color: blueviolet;
+            display: grid;
+
+        }
+        #heading:hover{
+            color: yellow;
+        }
+        p{
+
+            border-width: 3px;
+            border-radius: 3px;
+            border-color: black;
+            font-size: 20px;
+
+        }
+        .abaout{
+            height: 10%;
+            width: 100%;
+            background-color: chartreuse;
+            display: grid;
+            color: white;
+            text-align: center;
+        }
+        #h3:hover{
+            color: navy;
+        }
+        span,h3,a,.home,.header, p {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+    <div class="home">
+        <span><a href="#">home</a></span>
+        <span><a href="#">about</a></span>
+    </div>
+    <div class="header">
+        <h1 id="heading">welcome to my website</h1>
+        <div class="P"> <img src="WIN_20250312_07_05_44_Pro.jpg" height="80px" alt="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio aliquid asperiores unde rerum facilis necessitatibus ut consectetur! Unde, repellendus voluptate eaque necessitatibus repellat porro enim, nisi minima tempore impedit corrupti!</div>
+    </div>
+    <div class="abaout">
+        <div id="h3">@copyright 2025 by enjoy programming</div>
+    </div>
+</div>
+</body>
+</html>
