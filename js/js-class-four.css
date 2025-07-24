@@ -1,0 +1,45 @@
+body{
+    width: 100vw;
+    height: 100vh;
+  
+}
+.main-container{
+    width: 40%;
+    height: 100%;
+    background-color: cadetblue;
+}
+.display{
+    width: 100%;
+    height: 20%;
+    background-color: chocolate;
+    font-size: 30px;
+    text-align: center;
+}
+.week-container{
+    width: 100%;
+    height: 50%;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    background-color: cadetblue;
+    
+    
+}
+button:hover{
+    background-color: brown;
+}
+.button{
+    height: 150px;
+    font-size: 24px;
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+    border: none;    
+}
+.button:hover{
+    border-style: solid;
+    border-color: black;
+    border-width: 10px;
+    cursor: pointer;
+    
+}

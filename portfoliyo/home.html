@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Nakade - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      width: 90%;
+      gap: 40px;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .left h1 span {
+      color: #d4af37; /* goldish yellow */
+      font-family: 'Courier New', monospace;
+    }
+      .download-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .left h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    .left h2 span {
+      color: #d4af37;
+      border-right: 2px solid #d4af37;
+      padding-right: 5px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { border-color: #d4af37; }
+      50% { border-color: transparent; }
+      100% { border-color: #d4af37; }
+    }
+
+    .left p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .resume-btn {
+      padding: 14px 28px;
+      background-color: #d4af37;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .resume-btn:hover {
+      background-color: #c2a02c;
+    }
+
+    .right {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      z-index: 1;
+    }
+
+    .corner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 6px solid #d4af37;
+    }
+
+    .top-left {
+      top: 0;
+      left: 0;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+      }
+
+      .right img {
+        max-width: 250px;
+      }
+    }
+    /**/
+    /* ========== GLOBAL TRANSITIONS ========== */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ========== TEXT ANIMATION ========== */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== APPLY ANIMATIONS ========== */
+h1, h2, p {
+  animation: slideInLeft 1s ease forwards;
+}
+
+img {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* ========== BUTTON HOVER EFFECT ========== */
+button, .btn {
+  transition: transform 0.3s ease;
+}
+button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+/* ========== NAV HIGHLIGHT ON HOVER ========== */
+.sidebar a:hover {
+  color: gold;
+  transform: translateX(5px);
+}
+
+/* ========== RESPONSIVE LAYOUT ========== */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .sidebar a {
+    padding: 10px;
+  }
+
+  .text-container, .image-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+
+  .image-container img {
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+/* ========== SMALL DEVICES ========== */
+@media (max-width: 600px) {
+  .text-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    width: 90%;
+    padding: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>Hello, My name is <span>praful kharpuriye</span></h1>
+      <h2>I'm a  Full Stack Developer<span></span></h2>
+      <p>
+      The sector is experiencing strong growth, with significant investments in emerging technologies and digital skills. 
+      </p>
+        <a class="download-btn" href="index.html">Back button</a>
+     
+    </div>
+    <div class="right">
+      <img src="../css/css/assets/images/pkkkk3.jpg" height="500px" alt="praful">
+     
+    </div>
+  </div>
+
+ <script>
+  const elements = document.querySelectorAll('h1, h2, p, img, .btn');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(50px)";
+    observer.observe(el);
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoverable Dropdown Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4a5568;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .demo-section h2 {
+            margin-bottom: 15px;
+            color: #2d3748;
+            font-size: 1.5em;
+        }
+
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .dropdown-trigger {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .dropdown-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 0;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content p {
+            margin: 0;
+            padding: 15px 20px;
+            color: #4a5568;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .dropdown-content p:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content p:hover {
+            background-color: #f8fafc;
+            color: #667eea;
+        }
+
+        .menu-dropdown .dropdown-content {
+            min-width: 180px;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 12px 20px;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: #667eea;
+            color: white;
+            padding-left: 25px;
+        }
+     
+
+
+
+             /*menuuu  end   */
+        .info-dropdown .dropdown-content {
+            min-width: 300px;
+        }
+
+        .info-content {
+            padding: 20px;
+        }
+
+        .info-content h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-content p {
+            color: #718096;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .dropdown-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .dropdown {
+                margin: 5px 0;
+            }
+        }
+
+        .code-section {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .code-section h3 {
+            color: #81e6d9;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hoverable Dropdown Demo</h1>
+        <p class="subtitle">Interactive dropdown menus that appear on hover</p>
+
+        <div class="demo-section">
+            <h2>Basic Dropdown</h2>
+            <p>Move your mouse over the button below to see the dropdown content:</p>
+            
+            <div class="dropdown">
+                <div class="dropdown-trigger">Mouse over me</div>
+                <div class="dropdown-content">
+                    <p>Hello World!</p>
+                    <p>This is a hoverable dropdown!</p>
+                    <p>Easy to implement and use.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Menu Dropdown</h2>
+            <p>This dropdown contains navigation links:</p>
+            
+            <div class="dropdown menu-dropdown">
+                <div class="dropdown-trigger">Navigation Menu</div>
+                <div class="dropdown-content">
+                    <a href="#" class="menu-item">Home</a>
+                    <a href="#" class="menu-item">About</a>
+                    <a href="#" class="menu-item">Services</a>
+                    <a href="#" class="menu-item">Portfolio</a>
+                    <a href="#" class="menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Information Dropdown</h2>
+            <p>This dropdown shows detailed information:</p>
+            
+            <div class="dropdown info-dropdown">
+                <div class="dropdown-trigger">Learn More</div>
+                <div class="dropdown-content">
+                    <div class="info-content">
+                        <h3>Dropdown Features</h3>
+                        <p>• Pure CSS implementation</p>
+                        <p>• Smooth hover animations</p>
+                        <p>• Responsive design</p>
+                        <p>• Customizable styling</p>
+                        <p>• Cross-browser compatible</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Multiple Dropdowns</h2>
+            <p>You can have multiple dropdowns on the same page:</p>
+            
+            <div class="dropdown-grid">
+                <div class="dropdown">
+                    <div class="dropdown-trigger">Option A</div>
+                    <div class="dropdown-content">
+                        <p>Content for Option A</p>
+                        <p>Additional information here</p>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown-trigger">Option B</div>
+                    <div class="dropdown-content">
+                        <p>Content for Option B</p>
+                        <p>Different content here</p>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <div class="dropdown-trigger">Option C</div>
+                    <div class="dropdown-content">
+                        <p>Content for Option C</p>
+                        <p>Yet another dropdown</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-section">
+            <h3>Basic Implementation Code:</h3>
+            <pre>&lt;div class="dropdown"&gt;
+  &lt;span&gt;Mouse over me&lt;/span&gt;
+  &lt;div class="dropdown-content"&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display: none; position: absolute; }
+.dropdown:hover .dropdown-content { display: block; }
+&lt;/style&gt;</pre>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>input output </title>
+    <style>
+body{
+    width: 100vW;
+    height: 100vh;
+}
+.container{
+    width: 30%;
+    height: 70%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin-left: 450px;
+    
+}
+.display{
+    width: 80%;
+    height: 20%;
+    background-color: aqua;
+    margin-left: 40px;
+    margin-top: 40px;
+    padding-top: 30px;
+    
+
+}
+
+ .input-field{
+  height: 30%;
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 45px;
+  background-color: white;
+  
+ }
+ .input{
+    margin-left: 40px;
+    height: 60px;
+ }
+ .btn{
+    margin-left: 150px;
+ }
+ 
+    </style>
+    <script>
+        function displaystring(){
+            alert ("hello javascript")
+            let a = 10;
+            console.log(a);
+            return "hello";
+        }
+        function displaysum(){
+            document.getElementById("display").innerHTML  = "2 + 2 =" + (2 + 2);
+            return 10;
+        }
+        function inputvalue(){
+            let number = document.getElementById("input").value ;
+            document.getElementById("display").innerHTML = number; //ui
+            console.log(number); // console
+            alert ("number") // alert 
+        
+        }
+    </script> 
+</head>
+<body>
+    <div class="container">
+       <div class="display" id="display"></div>
+       <div class="input-field">
+       <input class="input" type="text" id="input" placeholder="Enter a NUmber">
+    </div>
+    <button class="btn"  onclick="inputvalue ('hello world')" >submit</button >
+    </div>
+</body>
+</html>

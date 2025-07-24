@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #000000, #223b40);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #030202, #4ecdc4, #45b7d1, #96ceb4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            min-height: 88vh;
+            margin-top: 70px;
+            background-color: #080c0f;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #040506, #060708);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            left: 0;
+            top: 70px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #4a5a6a;
+        }
+
+        .profile-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #000000, #312222, #527780, #96ceb4);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-section {
+            margin: 20px 0;
+        }
+
+        .nav-title {
+            color: #95a5a6;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #000000;
+            color: white;
+            border-left-color: #3498db;
+        }
+
+        .nav-item i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Portfolio Items Header */
+        .portfolio-header { /* Renamed from categories-header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .portfolio-header h2 { /* Renamed from categories-header */
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid { /* Renamed from categories-grid */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-card { /* Renamed from category-card */
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover { /* Renamed from category-card */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            border-color: #2196f3;
+        }
+
+        .portfolio-image { /* Renamed from category-image */
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .portfolio-info { /* Renamed from category-info */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .portfolio-name { /* Renamed from category-name */
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-name-link { /* Renamed from category-name-link */
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-name-link:hover { /* Renamed from category-name-link */
+            color: #2980b9;
+        }
+
+        .project-status-info { /* Renamed from quantity-info */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7f8c8d;
+        }
+
+        .status-label { /* Renamed from quantity-label */
+            font-size: 0.9rem;
+        }
+
+        .status-value { /* Renamed from quantity-value */
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #27ae60;
+        }
+
+        .status-value.zero { /* Renamed from quantity-value.zero */
+            color: #e74c3c;
+        }
+
+        /* Enhanced Responsive Design */
+        
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 25px;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+            
+            .portfolio-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Standard Desktop */
+        @media (max-width: 1199px) and (min-width: 1025px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .sidebar {
+                width: 220px;
+            }
+            
+            .main-content {
+                margin-left: 220px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 18px;
+            }
+            
+            .portfolio-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Tablet Portrait and Mobile Landscape */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .portfolio-header {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .header-buttons {
+                justify-content: center;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .portfolio-card {
+                padding: 15px;
+                min-height: auto;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .user-info {
+                font-size: 0.8rem;
+            }
+            
+            .portfolio-info {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .status-label {
+                font-size: 1.2rem;
+                margin: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+            }
+
+            .main-content {
+                padding: 10px;
+            }
+
+            .portfolio-card {
+                padding: 12px;
+                background-color: black !important;
+                min-height: 300px;
+            }
+
+            .portfolio-image {
+                height: 80px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .portfolio-header h2 {
+                font-size: 1.4rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .sidebar {
+                width: 250px;
+            }
+            
+            .status-label {
+                font-size: 1rem !important;
+                margin-left: 0 !important;
+                padding: 10px;
+                line-height: 1.4;
+            }
+            
+            .portfolio-info i {
+                font-size: 0.9rem !important;
+                padding: 10px;
+                line-height: 1.5;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 360px) {
+            .header {
+                padding: 8px 12px;
+            }
+            
+            .header h1 {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 8px;
+            }
+            
+            .portfolio-card {
+                padding: 10px;
+                min-height: 280px;
+            }
+            
+            .portfolio-image {
+                height: 70px;
+            }
+            
+            .portfolio-header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .sidebar {
+                width: 220px;
+            }
+            
+            .nav-item {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .profile {
+                padding: 15px;
+            }
+            
+            .profile-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Overlay for mobile sidebar */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* Ensure content flows properly */
+        @media (max-width: 768px) {
+            .portfolio-info .status-label {
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            .portfolio-info i {
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .portfolio-image {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h1> Port<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: orange;">folio</span></h1>
+        </div>
+        <div class="user-info">
+           
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="profile">
+                <div class="profile-avatar">💻</div>
+                <span>Praful K</span>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Web Developer</div>
+
+                   <a href="#" class="nav-item active">
+                    <i>📊</i> Home
+                </a>
+                  <a href="home.html" class="nav-item">
+                    <i>🏠</i> About
+                </a>
+                <a href="project.html" class="nav-item">
+                    <i>✨</i> Projects
+                </a>
+                <a href="skill-section.html" class="nav-item">
+                    <i>🚀</i> Skills
+                </a>
+                <a href="contact-section.html" class="nav-item">
+                    <i>✉️</i> Contact
+                </a> 
+            </div>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div class="portfolio-header">
+                <h2 style="color: #e3f2fd;"> Enjoy Programing</h2>
+                <div class="header-buttons">
+                    
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card" style="background-color: black; height: 412px;" >
+                    <img  src="https://www.enjoyprograming.com/assets/logo/resized-logo.jpeg" alt="Web Design Project" class="portfolio-image">
+                    <div class="portfolio-info">
+                        <span class="status-label" style="font-size: 50px; margin-left: 80px; color: #e3f2fd;">IT Skills Development <span style="color: orange;">Program by Enjoy Programming</span></span> <br><br>
+
+                        <i style="font-size: 20px; color: azure;">It's a sector driven by innovation, global demand for IT services, and the increasing adoption of digital technologies across various industries. </i>
+                      
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const mainContent = document.getElementById('mainContent');
+            
+            if (window.innerWidth <= 768) {
+                sidebar.classList.toggle('show');
+                overlay.classList.toggle('show');
+            } else {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.remove('show');
+            overlay.classList.remove('show');
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const mainContent = document.getElementById('mainContent');
+            
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+                if (sidebar.classList.contains('collapsed')) {
+                    mainContent.classList.add('expanded');
+                } else {
+                    mainContent.classList.remove('expanded');
+                }
+            } else {
+                sidebar.classList.remove('collapsed');
+                mainContent.classList.remove('expanded');
+            }
+        });
+
+        // Close sidebar when clicking on nav items on mobile
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
