@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Hair Salon - About Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #2c1810;
+            --accent-color: #f8f5f0;
+            --text-dark: #2c1810;
+            --text-light: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--accent-color);
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #fff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-10px); }
+            50% { transform: translateX(10px) translateY(-5px); }
+            75% { transform: translateX(-5px) translateY(10px); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), #e6c547);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), #e6c547, var(--primary-color));
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .about-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            font-weight: 400;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .about-text h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.1);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Image Gallery Styles */
+        .gallery-section {
+            margin-top: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-title h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .gallery-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 20px;
+        }
+
+        .gallery-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) transparent;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb:hover {
+            background: #b8941f;
+        }
+
+        .gallery-item {
+            flex: 0 0 300px;
+            height: 400px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(44, 24, 16, 0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h5 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-btn:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .stats-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-text {
+                padding: 30px;
+            }
+            
+            .about-text h3 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-item {
+                flex: 0 0 250px;
+                height: 350px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Luxe Hair Salon</h2>
+                <p class="section-subtitle">Where Beauty Meets Artistry - Your Premier Destination for Hair Excellence</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Welcome to Luxe Hair Salon, where passion for beauty and years of expertise come together to create extraordinary hair experiences. Founded in 2015, our salon has been at the forefront of hair fashion, combining traditional techniques with cutting-edge innovations to deliver stunning results that exceed expectations.</p>
+                    
+                    <p>Our team of certified stylists brings decades of combined experience, having trained in prestigious academies worldwide. We believe that every client deserves personalized attention and a look that reflects their unique personality and lifestyle. From classic cuts to avant-garde color treatments, we're committed to making you look and feel absolutely amazing.</p>
+                    
+                    <p>At Luxe Hair Salon, we use only premium, eco-friendly products that nourish your hair while protecting the environment. Our modern facility features state-of-the-art equipment and a relaxing atmosphere designed to make your visit a truly luxurious experience.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h4>Expert Stylists</h4>
+                            <p>Our certified professionals stay current with the latest trends and techniques</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Premium Products</h4>
+                            <p>We use only the finest, eco-friendly hair care products for optimal results</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h4>Luxury Experience</h4>
+                            <p>Enjoy a relaxing, pampering experience in our modern, comfortable salon</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Creative Artistry</h4>
+                            <p>From classic styles to bold transformations, we bring your vision to life</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Expert Stylists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-section">
+                    <div class="gallery-title">
+                        <h3>Our Work Gallery</h3>
+                        <p class="gallery-subtitle">Discover the artistry and transformations we create every day</p>
+                    </div>
+                    
+                    <div class="gallery-container">
+                        <div class="gallery-scroll" id="galleryScroll">
+                            <div class="gallery-item">
+                                <img src="https://media.istockphoto.com/id/872361244/photo/man-getting-his-beard-trimmed-with-electric-razor.jpg?s=612x612&w=0&k=20&c=_IjZcrY0Gp-2z6AWTQederZCA9BLdl-iqWkH0hGMTgg=" alt="Hair styling">
+                                <div class="gallery-overlay">
+                                    <h5>Elegant Updo</h5>
+                                    <p>Perfect for special occasions and formal events</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://pbs.twimg.com/media/CtqBXKgUMAAZxCF.jpg" alt="Hair coloring">
+                                <div class="gallery-overlay">
+                                    <h5>Balayage Highlights</h5>
+                                    <p>Natural-looking color that grows out beautifully</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2Fsb258ZW58MHx8MHx8fDA%3D" alt="Hair cutting">
+                                <div class="gallery-overlay">
+                                    <h5>Modern Bob Cut</h5>
+                                    <p>Chic and versatile style for the modern woman</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://plus.unsplash.com/premium_photo-1661380558859-40df8dd91dfd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2Fsb258ZW58MHx8MHx8fDA%3D" alt="Hair treatment">
+                                <div class="gallery-overlay">
+                                    <h5>Keratin Treatment</h5>
+                                    <p>Smooth, frizz-free hair that lasts for months</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Hair styling">
+                                <div class="gallery-overlay">
+                                    <h5>Beach Waves</h5>
+                                    <p>Effortless, natural-looking waves for any occasion</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://t3.ftcdn.net/jpg/06/12/54/06/240_F_612540672_NbtAy0BsODnRduj5u5SJuiKkjtOBQjOZ.jpg" alt="Hair color">
+                                <div class="gallery-overlay">
+                                    <h5>Vibrant Color</h5>
+                                    <p>Bold, fashion-forward colors that make a statement</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://hairsalonbarrie.ca/wp-content/uploads/2023/01/services-offered-at-a-men-salon-thegem-blog-default.jpg" alt="Hair styling">
+                                <div class="gallery-overlay">
+                                    <h5>Sleek Straight</h5>
+                                    <p>Glossy, straight hair with mirror-like shine</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-controls">
+                            <button class="gallery-btn" onclick="scrollGallery('left')">
+                                <i class="fas fa-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button class="gallery-btn" onclick="scrollGallery('right')">
+                                Next
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Gallery scroll functionality
+        function scrollGallery(direction) {
+            const gallery = document.getElementById('galleryScroll');
+            const scrollAmount = 320; // Width of one item + gap
+            
+            if (direction === 'left') {
+                gallery.scrollLeft -= scrollAmount;
+            } else {
+                gallery.scrollLeft += scrollAmount;
+            }
+        }
+
+        // Auto-scroll gallery
+        let autoScrollInterval;
+        const gallery = document.getElementById('galleryScroll');
+        
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+                    gallery.scrollLeft = 0;
+                } else {
+                    gallery.scrollLeft += 320;
+                }
+            }, 4000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Start auto-scroll on page load
+        window.addEventListener('load', startAutoScroll);
+
+        // Pause auto-scroll on hover
+        gallery.addEventListener('mouseenter', stopAutoScroll);
+        gallery.addEventListener('mouseleave', startAutoScroll);
+
+        // Smooth scroll behavior for gallery controls
+        document.querySelectorAll('.gallery-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                stopAutoScroll();
+                setTimeout(startAutoScroll, 5000); // Restart after 5 seconds
+            });
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+                        const suffix = finalValue.replace(/\d/g, '');
+                        
+                        let currentValue = 0;
+                        const increment = numericValue / 50;
+                        
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= numericValue) {
+                                target.textContent = finalValue;
+                                clearInterval(timer);
+                            } else {
+                                target.textContent = Math.floor(currentValue) + suffix;
+                            }
+                        }, 50);
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            });
+            
+            statNumbers.forEach(stat => observer.observe(stat));
+        }
+
+        // Initialize stats animation
+        window.addEventListener('load', animateStats);
+
+        // Add smooth reveal animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.about-text, .feature-item, .gallery-item, .stat-item');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

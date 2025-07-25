@@ -1,794 +1,859 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADHAKRISHNA Medical Store</title>
-      
-    <link
-      rel="shortcut icon"
-      href="WhatsApp Image 2025-03-30 at 19.44.00_d14377b2.jpg"
-      type="image/x-icon"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurvedika - Natural Ayurvedic Products</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-
-      .main-container {
-        width: 100%;
-        overflow-x: hidden;
-      }
-
-      /* Header Section */
-      .logo-ditel {
-        background-color: #123458;
-        padding: 10px 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .logo-one {
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-      }
-
-      .nav-menu a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .nav-menu a:hover {
-        color: #4fc3f7;
-      }
-
-      .mobile-menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero-section {
-        height: 100vh;
-        background: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
-                    url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        animation: backgroundSlide 15s infinite;
-      }
-
-      @keyframes backgroundSlide {
-        0% {
-          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
-                           url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        50% {
-          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
-                           url('https://visionshopfitters.co.uk/wp-content/uploads/2019/10/Clarks-Pharmacy-Counter-1800x1200.jpg');
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2d4a2b;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        100% {
-          background-image: linear-gradient(rgba(18, 52, 88, 0.7), rgba(18, 52, 88, 0.7)),
-                           url('https://5.imimg.com/data5/SELLER/Default/2023/8/337290294/US/AL/RD/80900042/pharmacy-interior.jpg');
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-      }
 
-      .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      }
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(45, 80, 22, 0.3);
+        }
 
-      .hero-content p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 600px;
-      }
-
-      .cta-button {
-        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-      }
-
-      /* Services Section */
-      .services-section {
-        padding: 80px 20px;
-        background: #f8f9fa;
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        color: #123458;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .service-card {
-        background: white;
-        padding: 40px 30px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      }
-
-      .service-card img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
-        border-radius: 50%;
-      }
-
-      .service-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: #123458;
-      }
-
-      .service-card p {
-        color: #666;
-        line-height: 1.6;
-      }
-
-      /* Medicine Promotion Section */
-      .medicine-promo {
-        padding: 80px 20px;
-        background: linear-gradient(135deg, #123458 0%, #1e3a8a 100%);
-        color: white;
-      }
-
-      .promo-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .promo-text h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        line-height: 1.2;
-      }
-
-      .discount-text {
-        color: #4fc3f7;
-        font-weight: bold;
-      }
-
-      .promo-description {
-        font-size: 1.1rem;
-        margin: 30px 0;
-        opacity: 0.9;
-      }
-
-      .medicine-select {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        background: white;
-        color: #333;
-      }
-
-      .buy-btn {
-        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 50px;
-        font-size: 18px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .buy-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-      }
-
-      .promo-image {
-        text-align: center;
-      }
-
-      .promo-image img {
-        width: 100%;
-        max-width: 500px;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      }
-
-      /* Medicine Grid Section */
-      .medicine-grid-section {
-        padding: 80px 20px;
-        background: white;
-      }
-
-      .medicine-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .medicine-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-      }
-
-      .medicine-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      }
-
-      .medicine-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .medicine-card-content {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .medicine-price {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #123458;
-        margin-bottom: 15px;
-      }
-
-      .medicine-name {
-        color: #666;
-        margin-bottom: 15px;
-      }
-
-      .medicine-buy-btn {
-        background: #28a745;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .medicine-buy-btn:hover {
-        background: #218838;
-        transform: translateY(-2px);
-      }
-
-      /* Contact Section */
-      .contact-section {
-        padding: 80px 20px;
-        background: #1a1a1a;
-        color: white;
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .contact-card {
-        text-align: center;
-      }
-
-      .contact-card h3 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #4fc3f7;
-      }
-
-      .contact-card a {
-        color: #ccc;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .contact-card a:hover {
-        color: #4fc3f7;
-      }
-
-      .newsletter-input {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border: 1px solid #444;
-        border-radius: 5px;
-        background: #333;
-        color: white;
-      }
-
-      .newsletter-btn {
-        background: #4fc3f7;
-        color: white;
-        padding: 12px 25px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .newsletter-btn:hover {
-        background: #29b6f6;
-        transform: translateY(-2px);
-      }
-
-      /* WhatsApp Float */
-      .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: #25d366;
-        border-radius: 50%;
-        padding: 15px;
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-      }
-
-      .whatsapp-float img {
-        width: 40px;
-        height: 40px;
-        display: block;
-      }
-
-      /* Mobile Responsive */
-      @media screen and (max-width: 768px) {
         .header-content {
-          padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .nav-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background: #123458;
-          flex-direction: column;
-          padding: 20px;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .nav-menu.active {
-          display: flex;
+        .search-bar {
+            display: flex;
+            margin: 10px 0;
+            min-width: 300px;
         }
 
-        .nav-menu a {
-          padding: 10px 0;
-          border-bottom: 1px solid rgba(255,255,255,0.1);
+        .search-bar input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            outline: none;
         }
 
-        .mobile-menu-toggle {
-          display: block;
+        .search-bar button {
+            padding: 12px 20px;
+            background: #ffd700;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-size: 16px;
+            color: #2d5016;
+            font-weight: bold;
+            transition: background 0.3s;
         }
 
-        .logo-one {
-          font-size: 1rem;
+        .search-bar button:hover {
+            background: #ffed4a;
         }
 
-        .hero-content h1 {
-          font-size: 2rem;
+        .cart-icon {
+            position: relative;
+            background: #ffd700;
+            color: #2d5016;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .hero-content p {
-          font-size: 1rem;
-          padding: 0 20px;
+        .cart-icon:hover {
+            transform: scale(1.1);
         }
 
-        .hero-section {
-          background-attachment: scroll;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 80, 22, 0.8), rgba(74, 124, 89, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%234a7c59" width="1000" height="600"/><circle fill="%236fa777" cx="200" cy="150" r="50"/><circle fill="%236fa777" cx="800" cy="450" r="70"/><path fill="%235d8a65" d="M0,300 Q250,200 500,300 T1000,300 L1000,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #2d5016;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Product Categories */
+        .categories {
+            padding: 80px 0;
+            background: white;
         }
 
         .section-title {
-          font-size: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        .services-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ffd700, #4a7c59);
+            border-radius: 2px;
         }
 
-        .service-card {
-          padding: 30px 20px;
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .promo-content {
-          grid-template-columns: 1fr;
-          gap: 30px;
-          text-align: center;
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
-        .promo-text h2 {
-          font-size: 2rem;
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #4a7c59;
         }
 
-        .medicine-grid {
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #4a7c59;
         }
 
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
+        .category-card h3 {
+            font-size: 1.5rem;
+            color: #2d5016;
+            margin-bottom: 15px;
         }
 
-        .whatsapp-float {
-          bottom: 15px;
-          right: 15px;
-          padding: 12px;
+        /* Featured Products */
+        .featured-products {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fffe 0%, #f0f8f0 100%);
         }
 
-        .whatsapp-float img {
-          width: 35px;
-          height: 35px;
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .hero-content h1 {
-          font-size: 1.5rem;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .section-title {
-          font-size: 1.5rem;
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
         }
 
-        .promo-text h2 {
-          font-size: 1.5rem;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
-        .medicine-grid {
-          grid-template-columns: 1fr;
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #4a7c59, #6fa777);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .services-section,
-        .medicine-promo,
-        .medicine-grid-section,
-        .contact-section {
-          padding: 40px 15px;
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffd700;
+            color: #2d5016;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
-      }
 
-      /* Animations */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        .product-info {
+            padding: 20px;
         }
-      }
 
-      .slide-in {
-        opacity: 0;
-        transform: translateX(-50px);
-        animation: slideInLeft 0.8s ease forwards;
-      }
-
-      @keyframes slideInLeft {
-        to {
-          opacity: 1;
-          transform: translateX(0);
+        .product-title {
+            font-size: 1.3rem;
+            color: #2d5016;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-      }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #4a7c59;
+            font-weight: bold;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: linear-gradient(45deg, #4a7c59, #6fa777);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: linear-gradient(45deg, #2d5016, #4a7c59);
+            transform: translateY(-2px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: #f8fffe;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #4a7c59;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #4a7c59;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d5016;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a7c59;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .search-bar {
+                min-width: 280px;
+                margin-bottom: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .category-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .categories,
+            .featured-products,
+            .benefits,
+            .testimonials {
+                padding: 50px 0;
+            }
+
+            .search-bar {
+                min-width: 250px;
+            }
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #4a7c59;
+            background: white;
+            color: #4a7c59;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #4a7c59;
+            color: white;
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .fab i {
+            font-size: 1.5rem;
+            color: #2d5016;
+        }
     </style>
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- Header -->
-      <header class="logo-ditel">
-        <div class="header-content">
-          <div class="logo-one">
-            💊 RADHAKRISHNA Medical Store
-          </div>
-          <nav>
-            <ul class="nav-menu" id="navMenu">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#medicine">Medicine</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
-          </nav>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🌿 Ayurvedika</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search natural products...">
+                    <button type="submit">🔍</button>
+                </div>
+                <div class="cart-icon">🛒</div>
+            </div>
         </div>
-      </header>
+    </header>
 
-      <!-- Hero Section -->
-      <section id="home" class="hero-section">
-        <div class="hero-content">
-          <h1 class="fade-in">RADHAKRISHNA Medical Store</h1>
-          <p class="fade-in">Your trusted partner in health and wellness. Quality medicines and healthcare products at affordable prices.</p>
-          <a href="#services" class="cta-button fade-in">Explore Services</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Pure Ayurvedic Wellness</h1>
+            <p>Discover the power of nature with our authentic Ayurvedic products</p>
+            <a href="#products" class="cta-button">Explore Products</a>
         </div>
-      </section>
+    </section>
 
-      <!-- Services Section -->
-      <section id="services" class="services-section">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card fade-in">
-            <img src="https://st.depositphotos.com/2885805/4736/v/450/depositphotos_47365953-stock-illustration-delivery-icon-silhouette.jpg" alt="Fast Delivery" />
-            <h3>Fast Delivery</h3>
-            <p>Quick and reliable delivery service to your doorstep. We ensure your medicines reach you on time.</p>
-          </div>
-          <div class="service-card fade-in">
-            <img src="https://www.shutterstock.com/image-vector/id-card-icon-flat-style-600nw-1384530530.jpg" alt="Licensed" />
-            <h3>Government Licensed</h3>
-            <p>Fully licensed and certified pharmacy with government approval. Your safety is our priority.</p>
-          </div>
-          <div class="service-card fade-in">
-            <img src="https://media.istockphoto.com/id/1470051537/vector/24-7-service-concept-24-7-open-support-service-icon-round-the-clock-customer-service-arrow.jpg" alt="24/7 Support" />
-            <h3>24/7 Support</h3>
-            <p>Round-the-clock customer support for all your medical needs and emergency requirements.</p>
-          </div>
+    <!-- Product Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Product Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🌱</div>
+                    <h3>Herbal Supplements</h3>
+                    <p>Natural herbs and supplements for daily wellness and vitality</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧴</div>
+                    <h3>Skincare & Beauty</h3>
+                    <p>Ayurvedic skincare products for natural radiance and health</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🫖</div>
+                    <h3>Herbal Teas</h3>
+                    <p>Therapeutic teas and decoctions for holistic healing</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💆</div>
+                    <h3>Massage Oils</h3>
+                    <p>Traditional Ayurvedic oils for massage and relaxation</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Medicine Promotion Section -->
-      <section class="medicine-promo">
-        <div class="promo-content">
-          <div class="promo-text">
-            <h2>Get Any Medicine</h2>
-            <h2>on <span class="discount-text">25%</span></h2>
-            <h2><span class="discount-text">Discount</span></h2>
-            <p class="promo-description">
-              Wide range of quality medicines available at discounted prices. 
-              Choose from our extensive collection of certified pharmaceuticals.
-            </p>
-            <select class="medicine-select" id="medicineSelect">
-              <option value="">Select Medicine</option>
-              <option value="Ibuprofen">Ibuprofen</option>
-              <option value="Paracetamol">Paracetamol (Acetaminophen)</option>
-              <option value="Aspirin">Aspirin</option>
-              <option value="Tramadol">Tramadol</option>
-              <option value="Citalopram">Citalopram (Celexa)</option>
-              <option value="Amlodipine">Amlodipine</option>
-              <option value="Alendronate">Alendronate</option>
-              <option value="Azithromycin">Azithromycin</option>
-              <option value="Cetirizine">Cetirizine</option>
-              <option value="Cephalexin">Cephalexin</option>
-              <option value="Omeprazole">Omeprazole</option>
-              <option value="Misoprostol">Misoprostol Tab.</option>
-              <option value="Dinoprostone">Dinoprostone gel</option>
-              <option value="Dydrogestone">Dydrogestone Tab</option>
-              <option value="Metaxalone">Metaxalone</option>
-              <option value="Syrup Expectorant">Syrup Expectorant</option>
-              <option value="Salbutamol">Salbutamol</option>
-              <option value="Budesonide">Budesonide</option>
-              <option value="Thiotropium">Thiotropium</option>
-              <option value="Vitamin D drops">Vitamin D drops</option>
-              <option value="D-Penicillamine">D – Penicillamine</option>
-              <option value="Wysolone">Wysolone</option>
-              <option value="Doxycycline">Doxycycline</option>
-              <option value="Dacarbazine">Dacarbazine</option>
-              <option value="Escitalopram">Escitalopram</option>
-              <option value="Salmeterol">Salmeterol</option>
-              <option value="Monteleukast">Monteleukast</option>
-              <option value="Simethicone">Simethicone</option>
-              <option value="Chromomelix">Chromomelix</option>
-            </select>
-            <button class="buy-btn" onclick="buyMedicine()">Buy Medicine</button>
-          </div>
-          <div class="promo-image">
-            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page279/medion/assets/images/medicines.jpg" alt="Medicine Collection" />
-          </div>
+    <!-- Filter Bar -->
+    <section class="filter-bar" id="products">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('supplements')">Supplements</button>
+                <button class="filter-btn" onclick="filterProducts('skincare')">Skincare</button>
+                <button class="filter-btn" onclick="filterProducts('teas')">Teas</button>
+                <button class="filter-btn" onclick="filterProducts('oils')">Oils</button>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Medicine Grid Section -->
-      <section id="medicine" class="medicine-grid-section">
-        <h2 class="section-title">Medicine & Health Products</h2>
-        <div class="medicine-grid">
-          <div class="medicine-card fade-in">
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/150922094902-22-prescription-drugs-25-medical-mistakes.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹799.00</div>
-              <div class="medicine-name">Health Supplement</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Health Supplement', 799)">Buy Now</button>
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        🌿
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ashwagandha Premium</h3>
+                        <p class="product-description">Pure Ashwagandha root extract for stress relief and energy boost</p>
+                        <div class="product-price">
+                            <span class="price">₹899</span>
+                            <span class="original-price">₹1299</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Ashwagandha Premium')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="skincare">
+                    <div class="product-image">
+                        🧴
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Turmeric Face Pack</h3>
+                        <p class="product-description">Natural turmeric face pack for glowing and healthy skin</p>
+                        <div class="product-price">
+                            <span class="price">₹599</span>
+                            <span class="original-price">₹799</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Turmeric Face Pack')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="teas">
+                    <div class="product-image">
+                        🫖
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Immunity Tea Blend</h3>
+                        <p class="product-description">Herbal tea blend with tulsi, ginger, and other immunity boosters</p>
+                        <div class="product-price">
+                            <span class="price">₹449</span>
+                            <span class="original-price">₹599</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Immunity Tea Blend')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="oils">
+                    <div class="product-image">
+                        💆
+                        <div class="product-badge">Premium</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sesame Massage Oil</h3>
+                        <p class="product-description">Traditional sesame oil infused with healing herbs</p>
+                        <div class="product-price">
+                            <span class="price">₹749</span>
+                            <span class="original-price">₹999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Sesame Massage Oil')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        🌱
+                        <div class="product-badge">Organic</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Triphala Powder</h3>
+                        <p class="product-description">Pure Triphala powder for digestive health and detoxification</p>
+                        <div class="product-price">
+                            <span class="price">₹399</span>
+                            <span class="original-price">₹549</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Triphala Powder')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="skincare">
+                    <div class="product-image">
+                        🧴
+                        <div class="product-badge">Natural</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Neem Face Wash</h3>
+                        <p class="product-description">Gentle neem face wash for acne-prone and sensitive skin</p>
+                        <div class="product-price">
+                            <span class="price">₹349</span>
+                            <span class="original-price">₹499</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Neem Face Wash')">Add to Cart</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹599.00</div>
-              <div class="medicine-name">Vitamin Tablets</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Vitamin Tablets', 599)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://www.riscassi-davis.com/images/blog/iStock-1190193494.1).jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹450.00</div>
-              <div class="medicine-name">Syrup Medicine</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Syrup Medicine', 450)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://cdn-ildcgjf.nitrocdn.com/VQqUTphAkvWXTRkGoGSZgPuSFAPIIPJO/assets/images/optimized/rev-c09e3fc/sedpharma.com/wp-content/uploads/2022/07/d67a29de57b4ab7e3439ae4f490d4ae7.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹320.00</div>
-              <div class="medicine-name">Pain Relief</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Pain Relief', 320)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://restoringwellnesssolutions.com/wp-content/uploads/2024/05/doctors-who-specialize-in-medication-management.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹110.00</div>
-              <div class="medicine-name">Cephalexin</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Cephalexin', 110)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyHUS6VgT_qDMwVCI76UkNHVOHJvBuSQHxIQ&s" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹110.00</div>
-              <div class="medicine-name">Doxycycline</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Doxycycline', 110)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹110.00</div>
-              <div class="medicine-name">Chromomelix</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Chromomelix', 110)">Buy Now</button>
-            </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹110.00</div>
-              <div class="medicine-name">Tramadol</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Tramadol', 110)">Buy Now</button>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Healthy Products Section -->
-      <section class="medicine-grid-section" style="background: #f8f9fa;">
-        <h2 class="section-title">Healthy Products</h2>
-        <div class="medicine-grid">
-          <div class="medicine-card fade-in">
-            <img src="https://media.gettyimages.com/id/494236751/photo/advil-and-ibuprofen.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹799.00</div>
-              <div class="medicine-name">Advil and Ibuprofen</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Advil and Ibuprofen', 799)">Buy Now</button>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose Ayurvedika?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>100% Natural</h3>
+                    <p>All our products are made from pure, natural ingredients without any harmful chemicals</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔬</div>
+                    <h3>Lab Tested</h3>
+                    <p>Every product undergoes rigorous testing to ensure safety, purity, and effectiveness</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📜</div>
+                    <h3>Traditional Formulas</h3>
+                    <p>Based on ancient Ayurvedic texts and traditional formulations passed down through generations</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and secure delivery across India with careful packaging to maintain product quality</p>
+                </div>
             </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://app.accessnewswire.com/imagelibrary/f924553f-9c8f-4ed6-8f6b-a497d8b75372/1035261/mind-lab-pro.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹599.00</div>
-              <div class="medicine-name">Mind Lab Pro</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Mind Lab Pro', 599)">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Ayurvedika's Ashwagandha has completely transformed my stress levels. I feel more energetic and balanced throughout the day."</p>
+                    <p class="testimonial-author">- Priya Sharma, Mumbai</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The turmeric face pack gave me glowing skin within just two weeks. Best natural skincare product I've ever used!"</p>
+                    <p class="testimonial-author">- Rakesh Kumar, Delhi</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Their immunity tea blend helped me stay healthy during the monsoon season. Taste is amazing too!"</p>
+                    <p class="testimonial-author">- Anjali Patel, Pune</p>
+                </div>
             </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://media.gettyimages.com/id/57083389/photo/new-study-finds-risks-with-plavix-aspirin-combination.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹450.00</div>
-              <div class="medicine-name">Plavix-Aspirin</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Plavix-Aspirin', 450)">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Ayurvedika</h3>
+                    <p>Ayurvedika is dedicated to bringing you the finest Ayurvedic products made from pure, natural ingredients. Our mission is to promote holistic wellness through traditional Ayurvedic wisdom.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li>📞 +91 98765 43210</li>
+                        <li>✉️ support@ayurvedika.com</li>
+                        <li>🕒 Mon-Sat: 9AM-7PM</li>
+                        <li>📍 Mumbai, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected for latest products and wellness tips</p>
+                    <div style="margin-top: 15px;">
+                        <span style="font-size: 1.5rem; margin-right: 15px;">📘</span>
+                        <span style="font-size: 1.5rem; margin-right: 15px;">📷</span>
+                        <span style="font-size: 1.5rem; margin-right: 15px;">🐦</span>
+                        <span style="font-size: 1.5rem;">📺</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="medicine-card fade-in">
-            <img src="https://www.addveda.com/admin/pro_images/5f92b67f57995giloy.jpg" alt="Medicine" />
-            <div class="medicine-card-content">
-              <div class="medicine-price">₹320.00</div>
-              <div class="medicine-name">Ayurvedic Medicines</div>
-              <button class="medicine-buy-btn" onclick="buyProduct('Ayurvedic Medicines', 320)">Buy Now</button>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ayurvedika. All rights reserved. | Made with 💚 for your wellness</p>
             </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="scrollToTop()">
+        <i>↑</i>
+    </div>
+
+    <script>
+        // Product filtering functionality
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
             
-          </div>
-        </div>
-      </section>
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter products
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                    product.style.animation = 'fadeInUp 0.5s ease-out';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-        <div class="contact-grid">
+        // Add to cart functionality
