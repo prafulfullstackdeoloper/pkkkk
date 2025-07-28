@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+         
+        .container{
+                display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        button{
+          margin-top: 20px;
+            height: 50px;
+            width: 100px;
+            gap: 20px;
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+     <div class="container">
+        
+    
+     <img src="light 1.jpg" id="img">
+      <button onclick="changeImageone()">on  </button>
+    
+      <button onclick="changeImagetwo()"> off</button>z     </div>
+
+
+     <script>
+        function changeImageone(){
+            document.getElementById("img").src= "light 2.jpg"
+        }
+         function changeImagetwo(){
+            document.getElementById("img").src= "light 1.jpg"
+        }
+     </script>
+</body>
+</html>
