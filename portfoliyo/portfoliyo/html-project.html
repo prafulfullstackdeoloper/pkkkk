@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .search-input::placeholder {
+            color: #888;
+        }
+       /*=======================*/
+        .search-btn {
+            background-color: #252727;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 20px;
+        }
+
+        .search-btn:hover {
+            background-color:  rgb(161, 145, 50);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .project-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .click-btn {
+            background-color: transparent;
+            color: #888;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .click-btn:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .search-input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-content {
+                padding: 15px;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1025px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Html Projects</h1>
+            <p class="subtitle">These are my Html projects .</p>
+            
+            <div class="search-container">
+             
+               <a href="project.html">  <button class="search-btn">Back button</button></a>
+            </div>
+        </header>
+
+        <div class="projects-grid">
+            <!-- mushroom html -->
+            <div class="project-card">
+                <img src="../assets/images/mashrom2.jpg" alt="Mushroom" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Mushroom html file</h3>
+                    <p class="project-description">This is All using html .</p>
+                 <a href="../port-2/cake-shop-grid.html">  <button class="click-btn" >Click Here</button></a>  
+                </div>
+            </div>
+
+            <!-- cpu components -->
+            <div class="project-card">
+                <img src= "https://cdn.vectorstock.com/i/500p/18/91/cpu-icon-sign-logo-in-the-circuit-line-style-vector-53401891.jpg" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">CPU Components</h3>
+                    <p class="project-description">This is Enjoy  using HTML, Css .</p>
+                  <a href="../port-2/cpu-components.html">  <button class="click-btn">Click Here</button> </a>
+                </div>
+            </div>
+
+            <!-- sign up form -->
+            <div class="project-card">
+                <img src="https://png.pngtree.com/png-vector/20221118/ourmid/pngtree-flatstyle-finger-cursor-signup-icon-on-black-background-vector-png-image_41389728.jpg" alt="sign-up-form" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">sign-up-form</h3>
+                    <p class="project-description">This is  using HTML,.</p>
+                 <a href="../port-2/sign-up-form.html">   <button class="click-btn">Click Here</button> </a>
+                </div>
+            </div>
+
+           <!--resume-->
+            <div class="project-card">
+                <img src="https://t3.ftcdn.net/jpg/04/75/01/06/360_F_475010683_QcMoX9EuZkjVToNNtXCDbejMo4tIj06i.jpg" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title"></h3>Resume
+                    <p class="project-description">This is a Resume, using for form tag.</p> 
+                  <a href="../port-2/resume.html"> <button class="click-btn">Click Here</button></a> 
+                </div>
+            </div>
+
+         
+ 
+</body>
+</html>

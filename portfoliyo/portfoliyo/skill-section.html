@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Section</title>
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      padding: 40px;
+    }
+
+    .section-title {
+      color: #ffd700;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding-top: 40px;
+    }
+
+    .skill-box {
+      background-color: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .skill-box h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .skill-box h3 span {
+      color: #ffd700;
+      margin-right: 10px;
+    }
+
+    .skill-box h4 {
+      color: #ffd700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .bar {
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 10px;
+    } 
+
+    /*===========================*/
+    .search-btn {
+      background-color: #b1b8b4;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-left: 530px;
+      border-radius: 20px;
+    }
+
+    .search-btn:hover {
+      background-color: #177c28;
+    }
+
+    .bar div {
+      height: 100%;
+      background-color: #ffd700;
+      animation: 2s;
+    }
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .skills-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skill-box {
+        width: 100%;
+      }
+
+      .search-btn {
+        display: block;
+        margin: 20px auto;
+      }
+    }
+    a{
+      text-decoration: none;
+    }
+ </style>
+</head>
+<body>
+  <a href="project.html"> 
+    <button class="search-btn">Back button</button> 
+  </a>
+
+  <section class="skills-section">
+    <h2 class="section-title">Skills</h2>
+     
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3><span>💻</span> Technical Skills</h3>
+        <h4>Frontend</h4>
+        <div class="skill"><label>HTML5/</label><div class="bar"><div style="width: 90%"></div></div></div>
+        <div class="skill"><label>CSS3</label><div class="bar"><div style="width: 80%"></div></div></div>
+        <div class="skill"><label>JavaScript</label><div class="bar"><div style="width: 60%"></div></div></div>
+        <div class="skill"><label>Bootstrap</label><div class="bar"><div style="width: 65%"></div></div></div>
+
+        <h4>Backend</h4>
+        <div class="skill"><label>Node.js</label><div class="bar"><div style="width: 30%"></div></div></div>
+      </div>
+
+      <div class="skill-box">
+        <h3><span>👨‍💼</span> Professional Skills</h3>
+        <h4>Tools & Methods</h4>
+        <div class="skill"><label>Git/GitHub</label><div class="bar"><div style="width: 80%"></div></div></div>
+        <div class="skill"><label>Responsive Design</label><div class="bar"><div style="width: 85%"></div></div></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

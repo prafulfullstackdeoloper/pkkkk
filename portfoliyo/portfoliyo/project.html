@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: #d4af37;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 240px;
+      height: 100vh;
+      background: #1a1a1a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: fixed;
+    }
+
+    .sidebar img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+   
+    .main {
+      margin-left: 260px;
+      padding: 30px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .main h1::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      background: #d4af37;
+      bottom: -10px;
+      left: 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .project img {
+      max-width: 100%;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .main {
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div style="color:#d4af37; font-size: 22px; font-weight: bold;">Praful </div>
+    <a href="index.html">🏠 Home</a>
+    <a href="home.html">👤 About</a>
+    <a href="project.html">💼 Projects</a>
+    <a href="skill-section.html">💻 Skills</a>
+    <a href="contact-section.html">💬 Contact</a>
+  </div>
+
+  <div class="main">
+    <h1>Projects</h1>
+    <div class="projects">
+     <a href="live-project.html"> <div class="project"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQStBIDzpKbbbD3w_Ge18Z37Og3Qt251ntfOQ&s" alt="Live Projects"></div> </a>
+     <a href="html-project.html"><div class="project"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWdYZ8nWw0jCLtFH1a5Snqz9SOeGwcxINkbQ&s" alt="Code Projects"></div> </a> 
+    <a href="css-project.html">  <div class="project"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnC5DP0EUFHAYNLV4kgSeKamJDPeK47IcndA&s" alt="HTML"></div> </a>
+     <a href="java-script.html">  <div class="project"><img src="https://img.favpng.com/8/13/25/javascript-javascript-logo-in-blue-BaMPADR4_t.jpg" alt="CSS"></div>  </a> 
+      <a href="boostrap.html"> <div class="project"><img src="https://bootstrapcolors.com/images/Bootstrap_logo.svg" alt="JavaScript"></div> </a> 
+      
+       <a href="all-languge.html"> <div class="project"><img src="https://media.istockphoto.com/id/960240166/vector/input-output-icon.jpg?s=612x612&w=0&k=20&c=jpMx5JTG0tDLGvc_SzwH6gD1K3mRkcDWO7Yd6-SXA9A=" alt="JavaScript"></div> </a> 
+      
+    </div>
+  </div>
+</body>
+
+</html>
