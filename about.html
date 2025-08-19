@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praful k - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    .left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      animation: slideInLeft 1s ease forwards;
+    }
+
+    .left h1 span {
+      color: #d4af37;
+      font-family: 'Courier New', monospace;
+    }
+
+    .left h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 20px 0;
+      animation: slideInLeft 1.2s ease forwards;
+    }
+
+    .left h2 span {
+      color: #d4af37;
+      border-right: 2px solid #d4af37;
+      padding-right: 5px;
+      animation: blink 1s infinite;
+    }
+
+    .left p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #ccc;
+      animation: slideInLeft 1.4s ease forwards;
+    }
+
+    .download-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      animation: fadeIn 1.6s ease forwards;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .right {
+      flex: 1 1 300px;
+      min-width: 280px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1.8s ease forwards;
+    }
+
+    .right img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+    }
+
+    /* Corner decoration (not used in HTML, but preserved) */
+    .corner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 6px solid #d4af37;
+    }
+
+    .top-left {
+      top: 0;
+      left: 0;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: #d4af37; }
+      50% { border-color: transparent; }
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .left h1 {
+        font-size: 2rem;
+      }
+
+      .left h2 {
+        font-size: 1.5rem;
+      }
+
+      .left p {
+        font-size: 1rem;
+      }
+
+      .right img {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .left h1 {
+        font-size: 1.6rem;
+      }
+
+      .left h2 {
+        font-size: 1.2rem;
+      }
+
+      .left p {
+        font-size: 0.95rem;
+      }
+
+      .download-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+      }
+
+      .right img {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>Hello, My name is <span>praful kharpuriye</span></h1>
+      <h2>I'm a Full Stack Developer<span></span></h2>
+      <p>
+        The sector is experiencing strong growth, with significant investments in emerging technologies and digital skills. 
+      </p>
+      <a class="download-btn" href="index.html">Back button</a>
+    </div>
+    <div class="right">
+      <img src="../assets/images/pkkkk3.jpg" height="450px" alt="praful">
+    </div>
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll('h1, h2, p, img, .btn');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(50px)";
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
