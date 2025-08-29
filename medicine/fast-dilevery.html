@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast Delivery</title>
     <style>
         * {
-            margin: 0;  
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Hero Section */
+        /* main Section */
         .main-container {
             min-height: 100vh;
             width: 100%;
@@ -141,7 +142,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-           
+
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -278,6 +279,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -289,6 +291,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -299,9 +302,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -409,7 +414,9 @@
         }
 
         /* Loading animation */
-        .hero-text, .hero-image, .feature-card {
+        .hero-text,
+        .hero-image,
+        .feature-card {
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
         }
@@ -418,15 +425,24 @@
             animation-delay: 0.2s;
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -434,15 +450,18 @@
         }
     </style>
 </head>
-<body> 
-    <!-- Hero Section -->
+
+<body>
+    <!-- main Section -->
     <div class="main-container">
         <div class="hero-content">
             <div class="hero-text">
-           
+
                 <h1>Why Should You Choose Us?</h1>
-                <h4>We provide exceptional delivery services with a commitment to speed, reliability, and customer satisfaction. Our unique benefits and value proposition set us apart from the competition, ensuring your packages reach their destination safely and on time.</h4>
-                
+                <h4>We provide exceptional delivery services with a commitment to speed, reliability, and customer
+                    satisfaction. Our unique benefits and value proposition set us apart from the competition, ensuring
+                    your packages reach their destination safely and on time.</h4>
+
                 <div class="stats-container">
                     <div class="stat-card">
                         <h2>100%</h2>
@@ -454,9 +473,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero-image">
-                <img src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1260.jpg" alt="Happy delivery man">
+                <img src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1260.jpg"
+                    alt="Happy delivery man">
             </div>
         </div>
     </div>
@@ -465,24 +485,27 @@
     <div class="features-section">
         <div class="features-content">
             <h2 class="section-title">Our Premium Services</h2>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🚚</div>
                     <h3>Fast Delivery</h3>
-                    <p>Lightning-fast delivery service ensuring your packages reach their destination in record time with our efficient logistics network.</p>
+                    <p>Lightning-fast delivery service ensuring your packages reach their destination in record time
+                        with our efficient logistics network.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Secure & Safe</h3>
-                    <p>Your packages are handled with utmost care and security. We guarantee safe delivery with full insurance coverage on all shipments.</p>
+                    <p>Your packages are handled with utmost care and security. We guarantee safe delivery with full
+                        insurance coverage on all shipments.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Real-time Tracking</h3>
-                    <p>Stay updated with live tracking notifications and real-time updates on your package location and delivery status.</p>
+                    <p>Stay updated with live tracking notifications and real-time updates on your package location and
+                        delivery status.</p>
                 </div>
             </div>
         </div>

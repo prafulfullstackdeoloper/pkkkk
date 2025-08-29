@@ -14,8 +14,9 @@
             margin: 0;
             height: 100vh;
             width: 100vw;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden; 
         }
+        /* main-container */
         .main-container {
             height: 100%;
             width: 100%;
@@ -30,38 +31,39 @@
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
         .inf-owner {
-            min-height: 80vh; /* Use min-height to ensure content fits */
+            min-height: 80vh; 
             width: 100%;
             background-color: black;
             color: aliceblue;
             text-align: center;
-            padding: 8% 20px; /* Add horizontal padding */
+            padding: 8% 20px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+        /* Responsive font size */
         .inf-owner h1 {
             color: chocolate;
-            font-size: 3rem; /* Responsive font size */
+            font-size: 3rem; 
             margin-bottom: 1rem;
         }
         .inf-owner h2 {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 1.8rem; /* Responsive font size */
+            font-size: 1.8rem; 
             margin-bottom: 1.5rem;
         }
         .inf-owner p {
             font-size: 1.1rem;
             line-height: 1.6;
-            max-width: 800px; /* Limit paragraph width */
+            max-width: 800px; 
         }
         .inf-owner button {
-            margin-top: 30px; /* Adjust margin for better spacing */
+            margin-top: 30px; 
             border-radius: 30px;
             height: 50px;
-            width: 120px; /* Slightly wider button */
-            background-color: #007bff; /* Bootstrap primary blue */
+            width: 120px; 
+            background-color: #007bff; 
             color: white;
             border: none;
             cursor: pointer;
@@ -70,34 +72,34 @@
         .inf-owner button:hover {
             background-color: #0056b3;
         }
-
+        /* medical-owner */
         .medical-owner {
-            min-height: 100vh; /* Ensure it takes full viewport height */
+            min-height: 100vh; 
             width: 100%;
             background-image: url(https://static.vecteezy.com/system/resources/previews/024/574/756/non_2x/blue-pill-capsule-for-pain-relief-medication-generative-ai-free-photo.jpg);
-            background-size: cover; /* Cover the entire area */
-            background-position: center; /* Center the image */
+            background-size: cover; 
+            background-position: center; 
             background-attachment: fixed;
             background-repeat: no-repeat;
             display: grid;
-            grid-template-columns: 1fr; /* Single column for mobile first */
-            gap: 20px; /* Increase gap */
-            padding: 5% 20px; /* Add padding */
+            grid-template-columns: 1fr; 
+            gap: 20px; 
+            padding: 5% 20px; 
             align-items: center;
             justify-content: center;
         }
         @media (min-width: 768px) {
             .medical-owner {
-                grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+                grid-template-columns: 1fr 1fr;
             }
         }
         .medical-one, .medical-two {
-            height: auto; /* Adjust height automatically */
+            height: auto; 
             width: 100%;
             color: aliceblue;
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+            background-color: rgba(0, 0, 0, 0.6); 
             border-radius: 10px;
         }
         .medical-one h1 {
@@ -111,18 +113,18 @@
         .medical-one h3 {
             font-size: 1.2rem;
             text-align: left;
-            padding-left: 20%; /* Indent list items */
+            padding-left: 20%; 
         }
         .medical-one li {
             margin-bottom: 0.5rem;
         }
         .medical-one h4 span {
-            display: block; /* Break line for better readability on smaller screens */
+            display: block; 
             margin-top: 10px;
         }
         .medical-two img {
-            max-width: 100%; /* Make image responsive */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; 
+            height: auto; 
             border-radius: 10px;
         }
 
@@ -130,8 +132,8 @@
         .contact-owner {
             min-height: 80vh;
             width: 100%;
-            background-color: #f8f9fa; /* Light background */
-            color: #343a40; /* Dark text */
+            background-color: #f8f9fa; 
+            color: #343a40; 
             text-align: center;
             padding: 5% 20px;
             display: flex;
@@ -140,7 +142,7 @@
             align-items: center;
         }
         .contact-owner h1 {
-            color: #007bff; /* Bootstrap primary blue */
+            color: #007bff; 
             font-size: 3rem;
             margin-bottom: 1.5rem;
         }
@@ -177,15 +179,15 @@
         .contact-info {
             margin-top: 40px;
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping on small screens */
+            flex-wrap: wrap; 
             justify-content: center;
             gap: 30px;
             width: 100%;
             max-width: 800px;
         }
         .contact-info div {
-            flex: 1 1 250px; /* Allow items to grow and shrink, min-width 250px */
-            background-color: #e9ecef; /* Light gray background */
+            flex: 1 1 250px; 
+            background-color: #e9ecef; 
             padding: 20px;
             border-radius: 8px;
             text-align: center;
@@ -210,7 +212,7 @@
 
         /* Footer */
         .footer {
-            background-color: #343a40; /* Dark background */
+            background-color: #343a40; 
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -245,6 +247,7 @@
     </style>
 </head>
 <body>
+    <!--main-->
     <div class="main-container">
         <div class="inf-owner">
             <h1 style="color: chocolate; font-size: 50px;"> About Us</h1>
@@ -255,6 +258,7 @@
             <p>It's an opportunity to engage visitors with a compelling narrative about the company's origins, values, and purpose. </p>
            <a href="index.html"> <button >Home</button></a>
         </div>
+        <!--medical-owner-->
         <div class="medical-owner">
             <div class="medical-one">
                 <h1><span style="color: chocolate;">Over</span> <span style="color: rgb(14, 56, 181);"> 3 Years</span></h1>
@@ -270,14 +274,14 @@
                 <img src="https://kirc.ac.in/wp-content/uploads/2024/06/MBBS-img-1.png" alt="Medical Image">
             </div>
         </div>
-
+       <!--contact-->
         <div class="contact-owner">
            
             <div class="contact-info">
                 <div>
                     <h3>Address</h3>
-                    <p>123 Medical Lane,</p>
-                    <p>Health City, HC 98765</p>
+                    <p>At Bharshing Near by, Bus stand ,</p>
+                    <p>Health City, pin 441305</p>
                     <p>Nagpur, Maharashtra, India</p>
                 </div>
                 <div>
@@ -287,12 +291,12 @@
                 </div>
                 <div>
                     <h3>Email</h3>
-                    <p><a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
-                    <p><a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+                    <p><a href="mailto:info@yourcompany.com">karankharpuriye80.gmail.com</a></p>
+                    <p><a href="mailto:support@yourcompany.com">radhakrishna4@gmail.com</a></p>
                 </div>
             </div>
         </div>
-
+   <!--footer-->
         <div class="footer">
             <p>&copy; 2025 Your Company. All rights reserved.</p>
         </div>

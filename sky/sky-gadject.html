@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GadgetGuard - Phone Accessories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .user-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .user-icons .icon {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .user-icons .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .main-container {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            min-height: 80vh;
+            position: relative;
+        }
+
+        .content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 5;
+        }
+
+        .main-title {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .cta-button {
+            background: white;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .products-showcase {
+            flex: 1;
+            position: relative;
+            height: 600px;
+            margin-left: 50px;
+        }
+
+        .product-item {
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product positioning to match the image layout */
+        .phone-1 {
+            top: 50px;
+            left: 100px;
+            width: 80px;
+            height: 140px;
+            background: linear-gradient(45deg, #333, #555);
+            border: 2px solid #666;
+        }
+
+        .phone-2 {
+            top: 220px;
+            right: 80px;
+            width: 90px;
+            height: 160px;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+        }
+
+        .phone-3 {
+            bottom: 100px;
+            right: 150px;
+            width: 85px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        }
+
+        .charger-1 {
+            top: 30px;
+            right: 200px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ffd93d, #ffb800);
+            border-radius: 5px;
+        }
+
+        .charger-2 {
+            bottom: 200px;
+            left: 50px;
+            width: 70px;
+            height: 40px;
+            background: linear-gradient(45deg, #333, #555);
+            border-radius: 5px;
+        }
+
+        .powerbank-1 {
+            top: 150px;
+            left: 200px;
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(45deg, #8e44ad, #732d91);
+            border-radius: 10px;
+        }
+
+        .powerbank-2 {
+            bottom: 150px;
+            left: 150px;
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(45deg, #1abc9c, #16a085);
+            border-radius: 10px;
+        }
+
+        .cable {
+            top: 250px;
+            left: 80px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #666, #333);
+            border-radius: 50%;
+        }
+
+        .case-1 {
+            top: 80px;
+            right: 50px;
+            width: 70px;
+            height: 120px;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            border-radius: 8px;
+        }
+
+        .accessory {
+            bottom: 50px;
+            right: 50px;
+            width: 80px;
+            height: 50px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 15px;
+        }
+
+        /* Floating animation for products */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .product-item:nth-child(odd) {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .product-item:nth-child(even) {
+            animation: float 3s ease-in-out infinite reverse;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .main-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-title {
+                font-size: 48px;
+            }
+            
+            .products-showcase {
+                margin-left: 0;
+                margin-top: 30px;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">GadgetGuard</div>
+        <nav class="nav">
+            <a href="#chargers">Chargers</a>
+            <a href="#earphones">Earphones</a>
+            <a href="#cases">Cases</a>
+            <a href="#premium">Premium Picks</a>
+        </nav>
+        <div class="user-icons">
+            <div class="icon"></div>
+            <div class="icon"></div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="content">
+            <h1 class="main-title">
+                Discover<br>
+                GadgetGuard<br>
+                Accessories
+            </h1>
+            <p class="subtitle">
+                Explore our wide range of high-quality phone accessories, from chargers to earphones. Enhance your smartphone experience with our affordable and reliable products.
+            </p>
+            <button class="cta-button">Shop Now</button>
+        </div>
+
+        <div class="products-showcase">
+            <div class="product-item phone-1"></div>
+            <div class="product-item phone-2"></div>
+            <div class="product-item phone-3"></div>
+            <div class="product-item charger-1"></div>
+            <div class="product-item charger-2"></div>
+            <div class="product-item powerbank-1"></div>
+            <div class="product-item powerbank-2"></div>
+            <div class="product-item cable"></div>
+            <div class="product-item case-1"></div>
+            <div class="product-item accessory"></div>
+        </div>
+    </main>
+
+    <script>
+        // Add interactive hover effects
+        document.querySelectorAll('.product-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+                this.style.zIndex = '20';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Add click functionality to CTA button
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            alert('Welcome to GadgetGuard! Start exploring our premium accessories.');
+        });
+
+       
