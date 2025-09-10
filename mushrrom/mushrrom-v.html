@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mushroom Hub – Delicious. Nutritious. Versatile.</title>
+  <meta name="description" content="A fast, responsive, animated mushroom website template with sections for recipes, benefits, news, and pro resources." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1115;           /* page background */
+      --card:#151821;         /* cards */
+      --muted:#9aa3b2;        /* muted text */
+      --text:#e8ecf1;         /* primary text */
+      --brand:#ff5d5d;        /* brand accent */
+      --brand-2:#ffb347;      /* secondary accent */
+      --good:#27d07d;         /* success accent */
+      --ring: rgba(255,93,93,.5);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 1200px;
+    }
+
+    *{ box-sizing: border-box }
+    html{ scroll-behavior:smooth }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+      color:var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(255,93,93,.08), transparent 60%),
+                          radial-gradient(800px 400px at -10% 20%, rgba(255,179,71,.1), transparent 60%),
+                          var(--bg);
+      line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none }
+    img{ max-width:100%; display:block; height:auto }
+
+    /* Utility */
+    .container{ width:min(100%, var(--maxw)); margin-inline:auto; padding-inline: clamp(16px, 4vw, 32px) }
+    .btn{ display:inline-flex; align-items:center; gap:.6rem; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#141414; font-weight:700; padding:.9rem 1.1rem; border-radius: 999px; border:0; cursor:pointer; box-shadow: 0 10px 24px rgba(255,93,93,.25);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease }
+    .btn:hover{ transform: translateY(-2px); box-shadow:0 14px 30px rgba(255,93,93,.35) }
+    .btn.secondary{ background:#242936; color:var(--text); box-shadow: inset 0 0 0 1px #30364a }
+    .chip{ display:inline-flex; align-items:center; gap:.35rem; background: #1b202b; color:#dfe6ef; border:1px solid #2a3144; padding:.4rem .7rem; border-radius: 999px; font-size:.85rem }
+
+    /* Header */
+    header{ position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background: rgba(15,17,21,.72); border-bottom:1px solid rgba(255,255,255,.06); z-index:100 }
+    .nav{ display:flex; align-items:center; justify-content:space-between; height:72px }
+    .brand{ display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.3px }
+    .brand .logo{ width:38px; height:38px; border-radius:12px; background:conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand)); display:grid; place-items:center; box-shadow:0 6px 16px rgba(255,93,93,.3) }
+    .brand b{ font-family:Poppins, Inter, sans-serif }
+    nav ul{ list-style:none; display:flex; gap:1rem; padding:0; margin:0 }
+    nav a{ opacity:.9; padding:.6rem .8rem; border-radius:10px }
+    nav a:hover{ background:#1b202b }
+    .menu-btn{ display:none; background:transparent; border:0; color:var(--text); font-size:1.5rem }
+
+    /* Hero */
+    .hero{ position:relative; overflow:hidden }
+    .hero .wrap{ display:grid; grid-template-columns: 1.2fr 1fr; align-items:center; gap: clamp(24px, 4vw, 48px); padding-block: clamp(40px, 8vw, 120px) }
+    .hero h1{ font-family:Poppins, Inter, sans-serif; font-size: clamp(2rem, 4.4vw, 4rem); line-height:1.12; margin:0 0 12px }
+    .hero p{ font-size: clamp(1rem, 1.3vw, 1.2rem); color:var(--muted); margin:0 0 20px }
+    .hero .cta{ display:flex; gap:.8rem; flex-wrap:wrap }
+
+    .hero .media{ position:relative; isolation:isolate }
+    .hero .card{ background: linear-gradient(180deg, #1a1f2a, #131722); border:1px solid #2a3144; border-radius: var(--radius); padding:12px; box-shadow:var(--shadow) }
+    .hero .card img{ border-radius: 14px }
+    .float{ position:absolute; inset:auto; filter: drop-shadow(0 12px 24px rgba(0,0,0,.35)); border-radius:14px; border:1px solid #2a3144; background:#131722 }
+    .float.f1{ width:160px; top:-18px; right:-18px; animation: drift 18s ease-in-out infinite; padding:10px }
+    .float.f2{ width:120px; bottom:-18px; left:-18px; animation: drift 22s ease-in-out infinite reverse; padding:10px }
+    .float .caption{ font-size:.8rem; color:var(--muted); padding:8px 10px 10px }
+    @keyframes drift{ 0%{ transform: translateY(0) rotate(0) } 50%{ transform: translateY(-14px) rotate(4deg) } 100%{ transform: translateY(0) rotate(0) } }
+
+    /* Sections */
+    section{ padding-block: clamp(56px, 8vw, 96px) }
+    .section-title{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:24px }
+    .section-title h2{ font-family:Poppins, Inter, sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin:0 }
+    .section-title p{ color:var(--muted); margin:0 }
+
+    /* Benefits grid */
+    .benefits{ display:grid; grid-template-columns: repeat(4, 1fr); gap:16px }
+    .benefit{ background:var(--card); border:1px solid #2a3144; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); position:relative; overflow:hidden }
+    .benefit h3{ margin:.2rem 0 .4rem; font-size:1.1rem }
+    .benefit p{ color:var(--muted); font-size:.95rem; margin:0 }
+    .benefit .icon{ width:42px; height:42px; display:grid; place-items:center; border-radius:12px; background: #202638; border:1px solid #2a3144; font-size:1.1rem }
+
+    /* Recipes grid */
+    .recipes{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px }
+    .recipe{ background: linear-gradient(180deg, #171b25, #11141b); border:1px solid #2a3144; border-radius: calc(var(--radius) + 4px); overflow:hidden; box-shadow:var(--shadow); transform: translateY(0); transition: transform .2s ease, box-shadow .2s ease }
+    .recipe:hover{ transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.45) }
+    .recipe img{ aspect-ratio: 16/10; object-fit:cover }
+    .recipe .content{ padding:16px }
+    .recipe .meta{ display:flex; align-items:center; gap:.6rem; margin-bottom:10px; flex-wrap:wrap }
+
+    /* Pro banner */
+    .pro{ display:grid; grid-template-columns: 1.1fr 1fr; align-items:center; gap:24px; background:linear-gradient(120deg, #172034, #121725); border:1px solid #2a3144; border-radius: var(--radius); padding: clamp(16px, 3vw, 24px) }
+    .pro ul{ margin:0; padding-left: 1rem; color:var(--muted) }
+
+    /* News cards */
+    .news{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px }
+    .news .card{ background:var(--card); border:1px solid #2a3144; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow) }
+    .news .card h4{ margin:.4rem 0 .5rem }
+    .news .card p{ margin:0; color:var(--muted) }
+
+    /* Footer */
+    footer{ background:#0c0e12; border-top:1px solid rgba(255,255,255,.06) }
+    .footer-grid{ display:grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap:24px }
+    .footer-grid h5{ margin:.4rem 0 .6rem; font-size:1rem }
+    .footer-grid a{ color: #cbd7e6 }
+    .copyright{ border-top:1px solid rgba(255,255,255,.06); color:#9aa3b2; font-size:.9rem; padding:14px 0; margin-top:10px }
+
+    /* Reveal on scroll */
+    .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease }
+    .reveal.show{ opacity:1; transform: translateY(0) }
+
+    /* Responsive */
+    @media (max-width: 1080px){
+      .benefits{ grid-template-columns: repeat(2, 1fr) }
+      .recipes{ grid-template-columns: repeat(2, 1fr) }
+      .news{ grid-template-columns: repeat(2, 1fr) }
+      .hero .wrap{ grid-template-columns: 1fr; }
+      .pro{ grid-template-columns: 1fr }
+      .footer-grid{ grid-template-columns: repeat(2, 1fr) }
+    }
+    @media (max-width: 640px){
+      nav ul{ display:none }
+      .menu-btn{ display:inline-flex }
+      .recipes{ grid-template-columns: 1fr }
+      .benefits{ grid-template-columns: 1fr }
+      .news{ grid-template-columns: 1fr }
+      .footer-grid{ grid-template-columns: 1fr }
+      .chip{ font-size:.78rem }
+    }
+
+    /* Accessibility: reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation: none !important; transition: none !important }
+    }
+       /* Contact Section */
+    .contact-section {
+      padding: 60px 20px;
+    
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-size: clamp(18px, 4vw, 32px);
+      margin-bottom: 20px;
+      color: #4fc3f7;
+    }
+
+    .contact-card a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: clamp(14px, 3vw, 16px);
+    }
+
+    .contact-card a:hover {
+      color: #4fc3f7;
+    }
+
+    .contact-card p {
+      font-size: clamp(14px, 3vw, 16px);
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+
+    .newsletter-input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background: #333;
+      color: white;
+      font-size: 16px;
+    }
+
+    .newsletter-btn {
+      background: #4fc3f7;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .newsletter-btn:hover {
+      background: #29b6f6;
+      transform: translateY(-2px);
+    }
+
+      /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: #25d366;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span class="logo" aria-hidden="true">🍄</span>
+        <b><i><span style="font-size: 30px; color: blueviolet;"> Viki</span></i>  Mushroom Hub</b>
+      </a>
+      <nav>
+        <button class="menu-btn" aria-label="Open menu" id="menuBtn">☰</button>
+        <ul id="mainMenu">
+          <li><a href="#recipes">Home</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#pros">For Pros</a></li>
+          <li><a href="https://www.myjuniper.com/blog/how-much-protein-in-mushrooms">News</a></li>
+              <li><a href="about-section.html">About</a></li>
+          <li><a href="#newsletter" class="chip">Subscribe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  
+  <section class="hero" id="#home"  >
+    <div  class="container wrap">
+      <div >
+        <span class="chip reveal">All Mushrooms Avalibale+ </span>
+        <h1 class="reveal" style="transition-delay:.05s">Delicious. mushroom Nutritious. .</h1>
+        <p class="reveal" style="transition-delay:.1s">Add savory depth, cut calories, and power your day with mushrooms — the ultimate ingredient for every kitchen and menu.</p>
+        <div class="cta reveal" style="transition-delay:.15s">
+          <a class="btn" href="explore.html"> Mushroom Gallery Plese  Visit  →</a>
+          <a class="btn secondary" href="#benefits" aria-label="Learn health benefits">See Health Benefits</a>
+        </div>
+      </div>
+
+      <div class="media">
+        <div class="card reveal" style="transition-delay:.2s">
+          <img loading="lazy" src=https://nublumemushroom.com/cdn/shop/articles/Can_You_Eat_Raw_Mushrooms_How_To_Dine_Safely.jpg?v=1683227221"  " alt="Assorted mushrooms in a bowl" />
+        </div>
+        <figure class="float f1 reveal" style="transition-delay:.25s">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop" alt="Mushroom tacos" />
+          <figcaption class="caption">Weeknight Mushroom Tacos</figcaption>
+        </figure>
+        <figure class="float f2 reveal" style="transition-delay:.3s">
+          <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLz8CLP6QRpwF4rrmluw60wjyHKqGRWG6_5fnu4KpSIS_gT2oly6s_T5LAzdGp9iQdEZc&usqp=CAU" alt="Mushroom stir fry" />
+          <figcaption class="caption">15‑Minute Stir‑Fry</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="container">
+    <div class="section-title">
+      <h2>Why Mushrooms?</h2>
+      <p>Big nutrition. Small footprint. Incredible flavor.</p>
+    </div>
+
+    <div class="benefits">
+      <article class="benefit reveal">
+        <div class="icon" aria-hidden="true">💪</div>
+        <h3>Nutrition Powerhouse</h3>
+        <p>Source of B‑vitamins, selenium, copper, potassium, and vitamin D when exposed to light.</p>
+      </article>
+      <article class="benefit reveal" style="transition-delay:.05s">
+        <div class="icon" aria-hidden="true">🔥</div>
+        <h3>Light on Calories</h3>
+        <p>Umami‑rich flavor helps reduce salt and fat while keeping dishes satisfying.</p>
+      </article>
+      <article class="benefit reveal" style="transition-delay:.1s">
+        <div class="icon" aria-hidden="true">🌎</div>
+        <h3>Sustainable Choice</h3>
+        <p>Low water and land use with a tiny carbon footprint compared to many proteins.</p>
+      </article>
+      <article class="benefit reveal" style="transition-delay:.15s">
+        <div class="icon" aria-hidden="true">👩‍🍳</div>
+        <h3>Menu Versatility</h3>
+        <p>Blend with meat, grill steaks, or sauté for pasta — one ingredient, endless options.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Recipes -->
+  <section id="recipes" class="container">
+    <div class="section-title">
+      <h2>Mushroom Types ?</h2>
+      <p>Quick, crowd‑pleasing dishes for every occasion.</p>
+    </div>
+
+    <div class="recipes">
+      <article class="recipe reveal">
+        <img loading="lazy" src="https://t3.ftcdn.net/jpg/01/68/23/42/360_F_168234229_V70FDH4C4x6jXgh3UrYJ7DFYQGwXXvdt.jpg" alt="Mushroom burger" />
+        <div class="content">
+          <div class="meta"><span class="chip">30 min</span><span class="chip">Blenditarian</span></div>
+          <h3>Blended Mushroom Burger</h3>
+          <p class="muted">Juicy beef + finely chopped mushrooms = flavorful, lighter burgers.</p>
+        </div>
+      </article>
+      <article class="recipe reveal" style="transition-delay:.05s">
+        <img loading="lazy" src="https://images.meesho.com/images/products/438667205/xkydv_512.webp?width=512" alt="Creamy mushroom pasta" />
+        <div class="content">
+          <div class="meta"><span class="chip">25 min</span><span class="chip">Comfort</span></div>
+          <h3>Creamy Garlic Mushroom Pasta</h3>
+          <p class="muted">Silky sauce, seared mushrooms, and fresh herbs — weeknight magic.</p>
+        </div>
+      </article>
+      <article class="recipe reveal" style="transition-delay:.1s">
+        <img loading="lazy" src="https://www.health.com/thmb/QsJmVahm8vg_R00ywd86ouENHY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/HealthiestMushrooms-ecde1a5904234ea5bc5a1e1dff9d726c.jpg" alt="Stuffed mushrooms" />
+        <div class="content">
+          <div class="meta"><span class="chip">40 min</span><span class="chip">Party</span></div>
+          <h3>Herbed Stuffed Mushrooms</h3>
+          <p class="muted">A crowd favorite appetizer with parmesan, breadcrumbs, and parsley.</p>
+        </div>
+      </article>
+    </div>
+
+    <p style="margin-top:18px" class="reveal"><a class="btn" href="#newsletter">Get weekly recipes →</a></p>
+  </section>
+
+  <!-- Pro Banner / For Pros -->
+  <section id="pros" class="container">
+    <div class="pro reveal">
+      <div>
+        <h2 style="margin:.2rem 0 .4rem">For Foodservice & Retail Pros</h2>
+        <p style="color:var(--muted); margin:0 0 .6rem">Promote mushrooms with turnkey assets — social graphics, POS kits, menu inspiration, and training videos.</p>
+        <ul>
+          <li> mushroom Helty</li>
+          <li>Menu ideas for QSR, casual, and fine dining</li>
+          <li>Nutrition & sustainability talking points</li>
+        </ul>
+        <p style="margin-top:1rem"><a class="btn" href="#">Explore Pro Resources</a></p>
+      </div>
+      <div class="card" aria-hidden="true">
+        <img loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/can-you-freeze-mushrooms-646275999e6e6.jpg?crop=1xw:0.84375xh;0,0.101xh&resize=1200:*" alt="Chef slicing mushrooms" style="border-radius:14px" />
+      </div>
+    </div>
+  </section>
+
+  <!-- News / Research -->
+  <section id="news" class="container">
+    <div class="section-title">
+      <h2>Latest News & Research</h2>
+      <p>Stay current on mushroom science, trends, and campaigns.</p>
+    </div>
+
+    <div class="news">
+      <article class="card reveal">
+        <span class="chip" aria-label="category">Research</span>
+        <h4>Vitamin D in UV‑exposed Mushrooms</h4>
+        <p>Learn how light exposure increases vitamin D2, supporting daily intake goals.</p>
+      </article>
+      <article class="card reveal" style="transition-delay:.05s">
+        <span class="chip">Trends</span>
+        <h4>Blenditarian Movement Keeps Growing</h4>
+        <p>Home cooks and operators embrace meat + mushroom blends for flavor and value.</p>
+      </article>
+      <article class="card reveal" style="transition-delay:.1s">
+        <span class="chip">Campaign</span>
+        <h4>Back‑to‑School Recipe Toolkit</h4>
+        <p>Download lunchbox‑friendly ideas with printable shopping lists and social posts.</p>
+      </article>
+    </div>
+  </section>
+
+  
+
+   <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-card fade-in">
+          <h3>📞 Contact Information</h3>
+          <p>Phone: <a href="tel:+918668941248">+91 8668941248</a></p>
+          <p>Email: <a href="mailto:vikikharpuriye8@gmail.com">vikikharpuriye8@gmail.com</a></p>
+          <p>Address: Near By Jolwadi, Lohari Swanga Road<br>Pin Code: 441305</p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <h3>🏥 Quick Links</h3>
+          <p><a href="#home">Home</a></p>
+          <p><a href="#About">Benefits</a></p>
+          <p><a href="">For Pros</a></p>
+          <p><a href="" target="_blank">News</a></p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <h3>📧 Newsletter</h3>
+          <form onsubmit="subscribeNewsletter(event)">
+            <input type="email" class="newsletter-input" placeholder="Enter your Email" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding-block: 36px">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="logo">🍄</span><b>Viki Mushroom Hub</b></div>
+          <p style="color:var(--muted)">Inspiring cooks and supporting the mushroom community with recipes, education, and resources.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="#recipes">Recipes</a><br>
+          <a href="#benefits">Benefits</a><br>
+          <a href="#pros">For Pros</a>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a href="#">About</a><br>
+          <a href="#contact">Contact</a><br>
+          <a href="#">Press</a>
+        </div>
+        <div>
+          <h5>Follow</h5>
+          <a href="#">Instagram</a><br>
+          <a href="#">YouTube</a><br>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+      <div style="text-align: center;" class="copyright">© <span id="year"></span> Viki Mushroom Hub. All rights reserved @2025.</div>
+    </div>
+  </footer>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/8668941248" class="whatsapp-float" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Chat on WhatsApp" />
+    </a>
+
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainMenu = document.getElementById('mainMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mainMenu.style.display === 'flex';
+      mainMenu.style.display = open ? 'none' : 'flex';
+      mainMenu.style.flexDirection = 'column';
+      mainMenu.style.gap = '6px';
+      mainMenu.style.background = '#0f1115';
+      mainMenu.style.position = 'absolute';
+      mainMenu.style.right = '16px';
+      mainMenu.style.top = '64px';
+      mainMenu.style.padding = '10px';
+      mainMenu.style.border = '1px solid #2a3144';
+      mainMenu.style.borderRadius = '12px';
+    });
+
+    // Reveal on scroll using IntersectionObserver
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    }, { threshold:.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Newsletter demo (no backend)
+    const form = document.getElementById('subscribeForm');
+    const msg = document.getElementById('msg');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!valid){ msg.textContent = 'Please enter a valid email.'; return; }
+      msg.textContent = 'Thanks! You\'re subscribed.';
+      form.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
