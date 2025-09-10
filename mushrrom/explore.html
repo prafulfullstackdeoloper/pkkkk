@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Gallery - Fungi Explorer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #040305 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .mushroom-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .mushroom-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .mushroom-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        .mushroom-card:hover .mushroom-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .mushroom-name {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            text-transform: capitalize;
+        }
+
+        .mushroom-species {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .view-details {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .view-details:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .loading-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .search-box {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .search-box:focus {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .filter-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .mushroom-card {
+                margin: 0 10px;
+            }
+
+            .image-container {
+                height: 200px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .filter-buttons {
+                padding: 0 10px;
+            }
+
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .mushroom-card {
+                margin: 0 5px;
+            }
+
+            .image-container {
+                height: 180px;
+            }
+
+            .card-content {
+                padding: 15px;
+            }
+        }
+
+        /* High-DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .mushroom-image {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            }
+
+            .mushroom-card {
+                background: rgba(45, 45, 45, 0.95);
+                color: #ecf0f1;
+            }
+
+            .mushroom-name {
+                color: #ecf0f1;
+            }
+
+            .mushroom-species {
+                color: #bdc3c7;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍄 Mushroom Gallery</h1>
+            <p class="subtitle">Explore the fascinating world of fungi</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search mushrooms..." id="searchInput">
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Species</button>
+            <button class="filter-btn" data-filter="amanita">Amanita</button>
+            <button class="filter-btn" data-filter="lepista">Lepista</button>
+            <button class="filter-btn" data-filter="morchella">Morchella</button>
+          <a href="index.html">  <button class="filter-btn" data-filter="other">Back Home</button></a>
+        </div>
+
+        <div class="gallery" id="mushroomGallery">
+            <!-- Mushroom cards will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const mushrooms = [
+            {
+                name: "Amanita Fulva",
+                species: "Amanita fulva",
+                category: "amanita",
+                image: "https://d.newsweek.com/en/full/2687061/mushrooms.jpg?w=1600&h=1200&q=88&f=cd358e7c356c66ad6adee14c692ea531",
+                description: "A beautiful orange-capped mushroom with distinctive white stem"
+            },
+            {
+                name: "Lepista Saeva",
+                species: "Lepista saeva",
+                category: "lepista",
+                image: "https://i.ytimg.com/vi/M0-_pLzDc34/maxresdefault.jpg",
+                description: "Purple-tinted mushroom with sturdy appearance"
+            },
+            {
+                name: "Coprinopsis Atramentaria",
+                species: "Coprinopsis atramentaria",
+                category: "other",
+                image: "https://www.farmersalmanac.com/wp-content/uploads/2021/11/shiitake-mushrooms-as197629491-950x634.jpeg",
+                description: "Ink cap mushrooms growing in clusters"
+            },
+            {
+                name: "Morchella Esculenta",
+                species: "Morchella esculenta",
+                category: "morchella",
+                image: "https://img.atlasobscura.com/Uc7-Zkr2OZ7wA6T4QCO2FwgPlJQKhrpJP6bRMjoaaf0/rs:fill:12000:12000/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy84M2JhZWFiYzNm/ZDZjNjlhNWJfVHJp/Y2hvbG9tYV9tYWdu/aXZlbGFyZV8oMjMy/MjIwNjQyMzMpLmpw/Zw.jpg",
+                description: "Honeycomb-textured edible morel mushroom"
+            },
+            {
+                name: "Amanita Fulva",
+                species: "Amanita fulva",
+                category: "amanita",
+                image: "https://extension.psu.edu/media/catalog/product/9/4/9483f6791207c48715f5606986f269c9_1.jpeg?quality=80&bg-color=255,255,255&fit=bounds&height=448&width=676&canvas=676:448",
+                description: "Another variety of the orange Amanita species"
+            },
+            {
+                name: "Auricularia Auricula-judae",
+                species: "Auricularia auricula-judae",
+                category: "other",
+                image: "https://cdn.britannica.com/86/237086-050-3F816C87/mushroom-cultivation-farm.jpg",
+                description: "Ear-shaped jelly fungus"
+            },
+            {
+                name: "Pleurocybella Porrigens",
+                species: "Pleurocybella porrigens",
+                category: "other",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT0DDG1djaOthceaC1F1wwsQyOflsqVOkeAw&s",
+                description: "White bracket fungus with delicate appearance"
+            },
+            {
+                name: "Galerina Sulciceps",
+                species: "Galerina sulciceps",
+                category: "other",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYLy8QPckX5fUCRqIAog-0vywUaKDXlHTlAw&s",
+                description: "Small brown mushrooms with grooved caps"
+            },
+            {
+                name: "Amanita Arocheae",
+                species: "Amanita arocheae",
+                category: "amanita",
+                image: "https://i.pinimg.com/736x/c1/67/cb/c167cb9ccf643b74e20639718d870b6b.jpg",
+                description: "White-capped Amanita species"
+            },
+            {
+                name: "Clavulinaceae",
+                species: "Clavulinaceae family",
+                category: "other",
+                image: "https://c8.alamy.com/comp/2GDX34W/group-of-mushrooms-found-on-india-mountains-during-monsoon-season-white-edible-mushroom-macrophoto-2GDX34W.jpg",
+                description: "Coral-like purple fungus formation"
+            }
+        ];
+
+        let filteredMushrooms = [...mushrooms];
+
+        function createMushroomCard(mushroom, index) {
+            return `
+                <div class="mushroom-card" data-category="${mushroom.category}" style="animation-delay: ${index * 0.1}s">
+                    <div class="image-container">
+                        <img class="mushroom-image" 
+                             src="${mushroom.image}" 
+                             alt="${mushroom.name}"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\\'loading-placeholder\\'>Image not available</div>'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="mushroom-name">${mushroom.name}</h3>
+                        <p class="mushroom-species">${mushroom.species}</p>
+                        <button class="view-details" onclick="showDetails('${mushroom.name}', '${mushroom.description}')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderMushrooms(mushroomsToShow = mushrooms) {
+            const gallery = document.getElementById('mushroomGallery');
+            gallery.innerHTML = mushroomsToShow.map((mushroom, index) => 
+                createMushroomCard(mushroom, index)
+            ).join('');
+        }
+
+        function filterMushrooms(category) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (category === 'all') {
+                filteredMushrooms = [...mushrooms];
+            } else {
+                filteredMushrooms = mushrooms.filter(mushroom => mushroom.category === category);
+            }
+            renderMushrooms(filteredMushrooms);
+        }
+
+        function searchMushrooms() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchResults = filteredMushrooms.filter(mushroom => 
+                mushroom.name.toLowerCase().includes(searchTerm) ||
+                mushroom.species.toLowerCase().includes(searchTerm) ||
+                mushroom.description.toLowerCase().includes(searchTerm)
+            );
+            renderMushrooms(searchResults);
+        }
+
+        function showDetails(name, description) {
+            alert(`${name}\n\n${description}\n\nNote: Always consult experts before identifying or consuming wild mushrooms!`);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', searchMushrooms);
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const category = e.target.getAttribute('data-filter');
+                filterMushrooms(category);
+            });
+        });
+
+        // Intersection Observer for animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize the gallery
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMushrooms();
+            
+            // Observe cards for scroll animations
+            setTimeout(() => {
+                document.querySelectorAll('.mushroom-card').forEach(card => {
+                    observer.observe(card);
+                });
+            }, 100);
+        });
+
+        // Lazy loading and performance optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
